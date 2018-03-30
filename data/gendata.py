@@ -10,8 +10,8 @@ for i in range(20):
     first = names.get_first_name()
     last = names.get_last_name()
     jid = str(randint(1, 2))
-    efile.write('\t'.join([idnum, last, first, phone, jid]))
-efile.close();
+    efile.write('\t'.join([idnum, last, first, phone, jid]) + '\n')
+efile.close()
 
 
 
