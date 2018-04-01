@@ -20,7 +20,7 @@
 
     <!-- Top of page -->
     <div id="logo_and_title">
-        <a id="logo" title="Home" href="template.php"><img alt="Westside Auto Logo" src="http://via.placeholder.com/150x150"></a>
+        <a title="Home" href="template.php"><img id="logo" alt="Westside Auto Logo" src="../img/truck_logo.png"></a>
         <h1 id="title">Westside Auto&trade; Database System</h1>
     </div>
     <!-- /Top of page -->
