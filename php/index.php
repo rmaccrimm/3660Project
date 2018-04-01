@@ -10,7 +10,7 @@
 <head>
     <title>Westside Auto&trade; Database System</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="stylesheet" href="../style/basic_style.css">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
     <div id="nav_bar">
         <ul>
             <li><a class="active" href="index.php" title="Home">Home</a></li>
-            <li><a href="#forms.php" title="Forms">Forms</a></li>
+            <li><a href="forms.php" title="Forms">Forms</a></li>
             <li><a href="#reports.php" title="Reports">Reports</a></li>
             <li><a href="#about.php" title="About">About</a></li>
         </ul>

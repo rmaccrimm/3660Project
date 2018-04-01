@@ -8,7 +8,7 @@
 
 <html lang="en-US">
 <head>
-    <title>Page Title</title>
+    <title>Forms</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/basic_style.css">
 </head>
@@ -29,8 +29,8 @@
     <!-- Navigation bar -->
     <div id="nav_bar">
         <ul>
-            <li><a class="active" href="template.php" title="Home">Home</a></li>
-            <li><a href="#forms.php" title="Forms">Forms</a></li>
+            <li><a href="index.php" title="Home">Home</a></li>
+            <li><a class="active" href="forms.php" title="Forms">Forms</a></li>
             <li><a href="#reports.php" title="Reports">Reports</a></li>
             <li><a href="#about.php" title="About">About</a></li>
         </ul>
@@ -39,7 +39,7 @@
 
 
     <!-- Page name -->
-    <h1 id="page_name">Page name</h1>
+    <h1 id="page_name">Forms</h1>
     <!-- /Page name -->
 
 
