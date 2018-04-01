@@ -1,0 +1,21 @@
+#form_table {
+    width: 100%;
+}
+
+table#form_table, #form_table th, #form_table td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#form_table th, #form_table td {
+    padding: 15px;
+    text-align: left;
+}
+
+table#form_table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+table#form_table tr:nth-child(odd) {
+    background-color: #fff;
+}
