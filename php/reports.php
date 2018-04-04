@@ -12,6 +12,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/basic_style.css">
     <link rel="stylesheet" href="../style/forms_style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/reports_php.js"></script>
 </head>
 <body>
 
@@ -46,7 +48,20 @@
 
     <!-- Content -->
     <div id="page_content">
+        <p>Please select a report to generate: </p>
+        <form name='report_form' id="report_form">
+            <select name="report_select" id="report_select">
+                <option value="" selected="selected" disabled>Choose here</option>
+                <option value="test1">test1</option>
+                <option value="test2">test2</option>
+                <option value="test3">test3</option>
+            </select>
+            <input type="submit" value="Generate">
+        </form>
 
+        <div id="form_ajax_result">
+            <!-- stuff gets put here -->
+        </div>
     </div>
     <!-- /Content -->
 
