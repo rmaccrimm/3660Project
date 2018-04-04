@@ -21,7 +21,7 @@
 
     <!-- Top of page -->
     <div id="logo_and_title">
-        <a title="Home" href="template.php"><img id="logo" alt="Westside Auto Logo" src="../img/truck_logo.png"></a>
+        <a title="Home" href="index.php"><img id="logo" alt="Westside Auto Logo" src="../img/truck_logo.png"></a>
         <h1 id="title">Westside Auto&trade; Database System</h1>
     </div>
     <!-- /Top of page -->
@@ -32,7 +32,7 @@
         <ul>
             <li><a href="index.php" title="Home">Home</a></li>
             <li><a class="active" href="forms.php" title="Forms">Forms</a></li>
-            <li><a href="#reports.php" title="Reports">Reports</a></li>
+            <li><a href="reports.php" title="Reports">Reports</a></li>
             <li><a href="#about.php" title="About">About</a></li>
         </ul>
     </div>

@@ -8,9 +8,10 @@
 
 <html lang="en-US">
 <head>
-    <title>Westside Auto&trade; Database System</title>
+    <title>Reports</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/basic_style.css">
+    <link rel="stylesheet" href="../style/forms_style.css">
 </head>
 <body>
 
@@ -20,7 +21,7 @@
 
     <!-- Top of page -->
     <div id="logo_and_title">
-        <a href="index.php"><img id="logo" alt="Westside Auto Logo" title="Home" src="../img/truck_logo.png"></a>
+        <a title="Home" href="index.php"><img id="logo" alt="Westside Auto Logo" src="../img/truck_logo.png"></a>
         <h1 id="title">Westside Auto&trade; Database System</h1>
     </div>
     <!-- /Top of page -->
@@ -29,9 +30,9 @@
     <!-- Navigation bar -->
     <div id="nav_bar">
         <ul>
-            <li><a class="active" href="index.php" title="Home">Home</a></li>
+            <li><a href="index.php" title="Home">Home</a></li>
             <li><a href="forms.php" title="Forms">Forms</a></li>
-            <li><a href="reports.php" title="Reports">Reports</a></li>
+            <li><a class="active" href="reports.php" title="Reports">Reports</a></li>
             <li><a href="#about.php" title="About">About</a></li>
         </ul>
     </div>
@@ -39,24 +40,15 @@
 
 
     <!-- Page name -->
-    <h1 id="page_name">Home</h1>
+    <h1 id="page_name">Reports</h1>
     <!-- /Page name -->
 
 
     <!-- Content -->
     <div id="page_content">
-        <p>Westside Auto Inc. is a fictional local used-car dealer located in West Lethbridge.</p>
-        <p>If you are:</p>
-        <ul>
-            <li>buying a car - <a href="#buy_form.php" title="Buy Form">click here</a></li>
-            <li>selling a car - <a href="#sell_form.php" title="Buy Form">click here</a></li>
-            <li>filing a warranty - <a href="#warranty_form.php" title="Buy Form">click here</a></li>
-            <li>filing a payment - <a href="#payment_form.php" title="Buy Form">click here</a></li>
-            <li>looking for reports - <a href="#reports.php" title="Buy Form">click here</a></li>
-        </ul>
+
     </div>
     <!-- /Content -->
-
 
     <!-- Footer -->
     <div id="footer">
