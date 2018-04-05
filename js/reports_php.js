@@ -13,10 +13,6 @@ $(function() {
             success: function (response) {
                 // Replace div content with response
                 $("#form_ajax_result").html(response);
-            },
-                // If there's an error, log it TODO: Doesn't work
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
             }
         });
         // Normal form event is to go to form:action, which
