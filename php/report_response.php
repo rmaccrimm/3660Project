@@ -8,54 +8,43 @@
 
 $selection = $_POST['report_select'];
 
-//make first part of table
-$to_output = "<table id=form_table><caption>{$selection}</caption>";
-
-//depending on selection, build appropriate table
-if ($selection == 'test1') {
-    // really we would just be looping the results of a query to build this
-    // i.e. for i in result { result.append(<tr>i</tr>) }
-    $to_output .= "
-        <tr>
-            <th>test1 col 1</th>
-            <th>test1 col2</th>
-        </tr>
-        <tr>
-            <td>bing</td>
-            <td>bong</td>
-        </tr>
-";
-}
-
-if ($selection == 'test2') {
-    $to_output .= "
-        <tr>
-            <th>test2 col 1</th>
-            <th>test2 col 2</th>
-        </tr>
-        <tr>
-            <td>bong</td>
-            <td>bing</td>
-        </tr>
-";
-}
-
-if ($selection == 'test3') {
-    $to_output .= "
-        <tr>
-            <th>test3 col 1</th>
-            <th>test3 col 2</th>
-        </tr>
-        <tr>
-            <td>bang</td>
-            <td>bang</td>
-        </tr>
-";
-}
-
-// add on closing table tag
-$to_output .= "</table>";
-
-//result of php script is what ajax call gets
-echo $to_output;
 ?>
+
+<!-- Output the opening table tag -->
+<table id="form_table"><caption><?=$selection?></caption>
+
+<?php if ($selection == 'test1') : ?>
+    <!-- Depending on the selection fill table with query result rows -->
+    <tr>
+        <th>test1 col 1</th>
+        <th>test1 col2</th>
+    </tr>
+    <tr>
+        <td>bing</td>
+        <td>bong</td>
+    </tr>
+<?php endif; ?>
+
+<?php if ($selection == 'test2') : ?>
+    <tr>
+        <th>test2 col 1</th>
+        <th>test2 col 2</th>
+    </tr>
+    <tr>
+        <td>bong</td>
+        <td>bing</td>
+    </tr>
+<?php endif; ?>
+
+<?php if ($selection == 'test3') : ?>
+    <tr>
+        <th>test3 col 1</th>
+        <th>test3 col 2</th>
+    </tr>
+    <tr>
+        <td>bang</td>
+        <td>bang</td>
+    </tr>
+<?php endif; ?>
+
+</table>
