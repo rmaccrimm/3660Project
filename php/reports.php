@@ -65,7 +65,7 @@
     </div>
     <!-- /Content -->
 
-    
+
     <!-- Footer -->
     <div id="footer">
         <small><p>CPSC 3660 - Introduction to Database Systems Group Project <a href="https://github.com/rmaccrimm/3660Project" title="Project Github">GitHub</a></p></small>

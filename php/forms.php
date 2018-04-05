@@ -53,6 +53,11 @@
                 <th>Description</th>
             </tr>
             <tr>
+                <td><a href="#customer_form.php" title="Customer Form">New Customer</a></td>
+                <td>A form with to enter customer information into the system. It is necessary to will this
+                    form out before the <em>Purchase Car</em> form can be filled out.</td>
+            </tr>
+            <tr>
                 <td><a href="#purchase_form.php" title="Purchase Car">Purchase Car</a></td>
                 <td>Form that buyers fill out when purchasing a car. Individual problems are spotted
                     and numbered. It is company policy to avoid cars in need of major repairs.</td>
