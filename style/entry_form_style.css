@@ -1,0 +1,27 @@
+.entry_form input, label {
+    /* Display each input on different line*/
+    display:block;
+}
+
+.entry_form label {
+    /* Give each form input a little vertical space*/
+    margin-top: 10px;
+}
+
+#form_submit {
+    /* Give the submit button a little space too*/
+    margin-top: 10px;
+}
+
+.form_col {
+    /*Two .form_col next to each other will set side by side*/
+    float: left;
+    width: 50%;
+}
+
+.form_row:after {
+    /* clear floats after the columns */
+    content: "";
+    display: table;
+    clear: both;
+}

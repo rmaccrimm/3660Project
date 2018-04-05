@@ -53,7 +53,7 @@
                 <th>Description</th>
             </tr>
             <tr>
-                <td><a href="#customer_form.php" title="Customer Form">New Customer</a></td>
+                <td><a href="customer_form.php" title="Customer Form">New Customer</a></td>
                 <td>A form with to enter customer information into the system. It is necessary to will this
                     form out before the <em>Purchase Car</em> form can be filled out.</td>
             </tr>
