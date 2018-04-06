@@ -52,7 +52,7 @@
         <form name='report_form' id="report_form">
             <select name="report_select" id="report_select">
                 <option value="" selected="selected" disabled>Choose here</option>
-                <option value="test1">test1</option>
+                <option value="Customers">Customers</option>
                 <option value="test2">test2</option>
                 <option value="test3">test3</option>
             </select>
