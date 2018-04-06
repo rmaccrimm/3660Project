@@ -8,22 +8,47 @@
 
 $selection = $_POST['report_select'];
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "auto_company";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
 
 <!-- Output the opening table tag -->
 <table id="form_table"><caption><?=$selection?></caption>
 
-<?php if ($selection == 'test1') : ?>
-    <!-- Depending on the selection fill table with query result rows -->
-    <tr>
-        <th>test1 col 1</th>
-        <th>test1 col2</th>
-    </tr>
-    <tr>
-        <td>bing</td>
-        <td>bong</td>
-    </tr>
-<?php endif; ?>
+<!-- Depending on the selection fill table with query result rows -->
+<?php if ($selection == 'Customers') :
+    $cust_query = 'SELECT * FROM `customer`';
+    $cust_data = $conn->query($cust_query);
+
+    $cust_headers = [
+        'Last name', 'First name', 'Address', 'City', 'State', 'Zip Code', 'Phone', 'Date of Birth', 'Tax ID',
+        'Average Days Late', 'Late Payments'];
+
+    $cust_cols = [
+        'last_name', 'first_name', 'address', 'city', 'state', 'zip_code', 'phone', 'date_of_birth', 'tax_id',
+        'avg_days_late', 'late_payments'];
+
+    foreach ($cust_headers as $h) {
+        echo "<th>" . $h . "</th>";
+    }
+
+    while ($row = $cust_data->fetch_assoc()) {
+        echo "<tr>";
+        foreach($cust_cols as $col) {
+            echo "<td>" . $row[$col] . "</td>";
+        }
+        echo "</tr>";
+    }
+
+endif; ?>
 
 <?php if ($selection == 'test2') : ?>
     <tr>
