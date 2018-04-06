@@ -45,6 +45,29 @@ CREATE TABLE IF NOT EXISTS `customer` (
   PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_job`
+--
+
+DROP TABLE IF EXISTS `employee_job`;
+CREATE TABLE IF NOT EXISTS `employee_job` (
+  `job_id` int(11) NOT NULL,
+  `job_title` char(20) NOT NULL,
+  PRIMARY KEY (`job_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_job`
+--
+
+INSERT INTO `employee_job` (`job_id`, `job_title`) VALUES
+(1, 'salesperson'),
+(2, 'buyer');
+
+-- --------------------------------------------------------
+
 --
 -- Dumping data for table `customer`
 --
@@ -173,27 +196,6 @@ INSERT INTO `employee` (`employee_id`, `last_name`, `first_name`, `phone`, `job_
 (47, 'FERTAL', 'TATYANA', '(453)-830-7659', 2),
 (48, 'MISHOE', 'BARBIE', '(228)-413-4064', 2),
 (49, 'HOHENSEE', 'GIDGET', '(437)-309-6029', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employee_job`
---
-
-DROP TABLE IF EXISTS `employee_job`;
-CREATE TABLE IF NOT EXISTS `employee_job` (
-  `job_id` int(11) NOT NULL,
-  `job_title` char(20) NOT NULL,
-  PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `employee_job`
---
-
-INSERT INTO `employee_job` (`job_id`, `job_title`) VALUES
-(1, 'salesperson'),
-(2, 'buyer');
 
 -- --------------------------------------------------------
 
