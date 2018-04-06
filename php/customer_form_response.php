@@ -6,6 +6,8 @@
  * Time: 9:48 PM
  */
 
+require_once("Database.php");
+
 echo var_dump($_POST); //TODO: remove
 ?>
 
