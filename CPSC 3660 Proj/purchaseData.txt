@@ -1,0 +1,20 @@
+2000-10-14	Albany	1	45	47	0
+2011-02-01	Albany	0	9	4	1
+2003-11-18	Vancouver	0	31	44	2
+2008-07-17	Burlington	0	82	43	3
+1999-06-06	Round Lake Beach	0	61	66	4
+2017-11-28	Coral Springs	1	86	37	5
+2005-07-10	Kailua	0	67	2	6
+2008-05-25	Modesto	0	54	43	7
+2005-02-10	Athens	1	40	11	8
+2015-11-29	Overland Park	1	77	59	9
+2000-11-29	Wichita	0	74	47	10
+2010-10-19	Portland	0	55	21	11
+2005-04-01	Grand Prairie	1	83	40	12
+2005-11-08	Cary	0	85	43	13
+2014-08-05	Pembroke Pines	0	13	94	14
+2004-10-15	Sioux City	1	69	58	15
+2001-03-11	Thousand Oaks	1	7	84	16
+2003-06-20	Fort Collins	1	51	56	17
+2003-02-23	Kennewick	1	60	81	18
+2013-06-10	Irving	1	43	50	19

@@ -1,0 +1,20 @@
+0	129477	618	597093	98867	Wagon	Blue	Yellow	Lamborghini	Accord	1970
+1	592679	93	452954	20430	Convertible	Green	Yellow	Volv	Rio	2004
+2	381463	961	646851	565105	Sports Car	Indigo	Orange	Bugatti	Sonic	1997
+3	82057	186	155998	84799	SUV	Purple	Indigo	Mini	Civic	1989
+4	875696	461	143117	640491	Diesel	Blue	Indigo	Lotus	Fit	1970
+5	599253	179	193708	702510	Van	Red	Blue	McLaren	Focus	1968
+6	18782	229	481395	649385	Truck	Purple	Purple	Rolls-Royce	Accord	1981
+7	182515	273	306956	225274	Sedan	Green	Green	Corvette	Sonic	1981
+8	607426	506	655625	933855	Sports Car	Blue	Blue	De Lorean	Sonic	1972
+9	519057	429	93061	270373	Van	Orange	Purple	Martini	Beetle	1979
+10	422211	855	637347	968723	Luxury Car	Red	Yellow	Chevrolet	Sonic	2001
+11	957595	638	219885	807687	Luxury Car	Indigo	Green	Bugatti	Accord	2007
+12	536753	587	607151	283297	Certified Pre-Owned	Yellow	Red	Ford	Accord	1962
+13	598957	443	497258	735320	Hybrid/Electric	Indigo	Red	Daewoo	Jetta	1978
+14	412812	528	877605	573655	Wagon	Blue	Blue	KIA	Lancer	1959
+15	566339	900	315429	591474	Coupe	Green	Indigo	Seat	Beetle	1964
+16	529191	68	441719	50334	Wagon	Purple	Blue	Land Rover	Focus	1973
+17	590754	648	263638	601613	Coupe	Purple	Purple	Mercedes	Beetle	1978
+18	720501	381	541956	791188	Sports Car	Blue	Blue	Opel	Civic	2000
+19	774008	319	347618	360605	Wagon	Yellow	Purple	Maybach	Beetle	1961
