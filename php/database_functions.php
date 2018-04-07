@@ -10,7 +10,7 @@ function db_connect() {
     static $database;
 
     if(!isset($database)) {
-        $database = new mysqli('localhost', 'root', '', 'westside_auto', 3306);
+        $database = new mysqli('localhost', 'root', '', 'auto_company', 3306);
     }
 
     if(!$database) {
