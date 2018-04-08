@@ -9,7 +9,7 @@
 include "database_functions.php";
 
 // This page should be usable unless posted to
-if(!$_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] != "POST") {
     die("Please use POST method");
 }
 
