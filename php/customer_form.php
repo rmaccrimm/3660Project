@@ -137,7 +137,7 @@
                     </select>
 
                     <label for="customer_tax_id">Tax Id</label>
-                    <input id="customer_tax_id" name="customer_tax_id" type="text" placeholder="01-23-45" required>
+                    <input id="customer_tax_id" maxlength="6" name="customer_tax_id" type="text" placeholder="012345" required>
 
                     <label for="customer_dob">Date of Birth</label>
                     <input id="customer_dob" name="customer_dob" type="date" required>
