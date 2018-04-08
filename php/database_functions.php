@@ -73,4 +73,6 @@ function db_quote($value) {
     $connection = db_connect();
     return "'" . $connection->real_escape_string($value) . "'";
 }
+
+
 ?>

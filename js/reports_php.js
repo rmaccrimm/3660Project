@@ -1,4 +1,5 @@
-$(function() {
+
+/*$(function() {
     // When report form is 'Generated' run this:
     $("#report_form").on('submit', function(e) {
 
@@ -20,5 +21,5 @@ $(function() {
         e.preventDefault();
     });
 });
-
+*/
 

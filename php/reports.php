@@ -51,16 +51,20 @@
 
     <!-- Content -->
     <div id="page_content">
-        <p>Please select a report to generate: </p>
-        <form name='report_form' id="report_form">
-            <select name="report_select" id="report_select">
-                <option value="" selected="selected" disabled>Choose here</option>
-                <option value="Customers">Customers</option>
-                <option value="test2">test2</option>
-                <option value="test3">test3</option>
-            </select>
-            <input type="submit" value="Generate">
-        </form>
+        <table id="form_table">
+            <caption>Forms to Fill Out</caption>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td><a href="customer_report.php" title="Customer Info">Customer Info</a></td>
+                <td>Customer contact, verhicle, payment, and warranty information.</td>
+            </tr>
+            <tr>
+                <td><a href="employee_report.php" title="Employee Info">Employee Info</a></td>
+                <td>Employee information</td>
+        </table>
 
         <div class="ui-widget" id="form_ajax_result">
             <!-- stuff gets put here -->
