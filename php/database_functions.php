@@ -74,5 +74,14 @@ function db_quote($value) {
     return "'" . $connection->real_escape_string($value) . "'";
 }
 
-
+function db_quote_many($array) {
+    /*
+     * Useful for quoting all form values from POST request
+     */
+    $to_return = array();
+    foreach($array as $value) {
+        $to_return[] = db_quote($value);
+    }
+    return $to_return;
+}
 ?>

@@ -1,3 +1,10 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../style/basic_style.css">
+</head>
+<body>
+<div id="content-wrapper">
+
 <?php
 /**
  * Created by PhpStorm.
@@ -9,7 +16,7 @@
 include "database_functions.php";
 
 // This page should be usable unless posted to
-if(!$_SERVER["REQUEST_METHOD"] == "POST") {
+if($_SERVER["REQUEST_METHOD"] != "POST") {
     die("Please use POST method");
 }
 
@@ -26,16 +33,21 @@ $tax = db_quote($_POST['customer_tax_id']);
 $dob = db_quote($_POST['customer_dob']);
 
 // Check if the customer already exists
-$rows = db_select("SELECT customer_id FROM customer WHERE first_name={$f_name} AND last_name={$l_name}");
-$already_exists = ($rows) ? true : false;
 
+$already_exists = db_select(
+    "SELECT customer_id FROM customer" .
+    " WHERE first_name={$f_name} " .
+    "AND last_name={$l_name} " .
+    "AND date_of_birth={$dob}"
+) ? true : false;
 
 $result = false;
 if (!$already_exists) {
     // Make a new customer
-    $result = db_query("INSERT INTO customer " .
-        "(first_name, last_name, phone, address, city, state, zip_code, gender, date_of_birth) " .
-        "VALUES ({$f_name}, {$l_name}, {$phone}, {$address}, {$city}, {$state}, {$zip}, {$gender}, {$dob})");
+    $result = db_query(
+            "INSERT INTO customer " .
+            "(first_name, last_name, phone, address, city, state, zip_code, gender, tax_id, date_of_birth) " .
+            "VALUES ({$f_name}, {$l_name}, {$phone}, {$address}, {$city}, {$state}, {$zip}, {$gender}, {$tax}, {$dob})");
 }?>
 
 <!-- Output some text to the user depending on result, a little janky -->
@@ -49,3 +61,7 @@ if (!$already_exists) {
     <p>Customer already exists! To go back, click <a href="customer_form.php" title="Go back to customer form">here</a></p>
 <?php endif;?>
 
+</div>
+</body>
+
+</html>
