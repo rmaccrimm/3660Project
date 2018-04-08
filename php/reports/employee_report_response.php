@@ -41,7 +41,6 @@ make_table(
     $contact_result,
     ['Phone', 'Title'],
     ['phone', 'job_title'],
-    'contact_table',
     'Contact Information'
 );
 
@@ -54,7 +53,6 @@ if ($title == 'salesperson') {
         db_query($sales_query),
         ['Make', 'Model', 'Year', 'First Name', 'Last Name', 'Total Due', 'Down Payment', 'Finance Amount', 'Date'],
         ['make', 'model', 'year', 'first_name', 'last_name', 'total_due', 'down_payment', 'finance_amount', 'date'],
-        'sales_table',
         'Sales'
     );
 }
@@ -63,7 +61,6 @@ else if ($title == 'buyer') {
         db_query($purchase_query),
         ['Make', 'Model', 'Year', 'Book Price', 'Sale Price', 'Date', 'Auction', 'Location'],
         ['make', 'model', 'year', 'book_price', 'sale_price', 'date', 'auction', 'location'],
-        'purchase_table',
         'Purchases'
     );
 }

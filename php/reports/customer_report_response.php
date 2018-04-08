@@ -45,7 +45,6 @@ make_table(
     db_query($contact_query),
     ['Address', 'City', 'State', 'Zip Code', 'Phone'],
     ['address', 'city', 'state', 'zip_code', 'phone'],
-    'contact_table',
     'Contact Info'
 );
 
@@ -53,7 +52,6 @@ make_table(
     db_query($vehicle_query),
     ['Make', 'Model', 'Year', 'Exterior', 'Interior', 'Style', 'Condition', 'Miles'],
     ['make', 'model', 'year', 'exterior_color', 'interior_color', 'style', 'vehicle_condition', 'miles'],
-    'vehicle_table',
     'Vehicles'
 );
 
@@ -61,7 +59,6 @@ make_table(
     db_query($payment_query),
     ['Tax ID', 'Avg days late', 'Late payments'],
     ['tax_id', 'avg_days_late', 'late_payments'],
-    'payment_table',
     'Payments'
 );
 
@@ -69,7 +66,6 @@ make_table(
     db_query($warranty_cost_query),
     ['First Name', 'Last Name', 'Sale Date', 'Total Cost', 'Monthly Cost'],
     ['first_name', 'last_name', 'sale_date', 'total_cost', 'monthly_cost'],
-    'warranty_cost_table',
     'Warranty Info'
 );
 
@@ -77,7 +73,6 @@ make_table(
     db_query($warranty_item_query),
     ['Item', 'Start Date', 'Length', 'Cost', 'Deductible'],
     ['item_covered', 'start_date', 'length', 'cost', 'deductible'],
-    'warranty_item_table',
     'Warranty Items'
 );
 
