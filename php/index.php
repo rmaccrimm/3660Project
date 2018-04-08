@@ -48,7 +48,7 @@
         <p>Westside Auto Inc. is a fictional local used-car dealer located in West Lethbridge.</p>
         <p>If you are:</p>
         <ul>
-            <li>buying a car - <a href="#buy_form.php" title="Buy Form">click here</a></li>
+            <li>buying a car - <a href="purchase_form.php" title="Buy Form">click here</a></li>
             <li>selling a car - <a href="#sell_form.php" title="Buy Form">click here</a></li>
             <li>filing a warranty - <a href="#warranty_form.php" title="Buy Form">click here</a></li>
             <li>filing a payment - <a href="#payment_form.php" title="Buy Form">click here</a></li>
