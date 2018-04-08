@@ -5,32 +5,11 @@
  * Date: 4/7/2018
  * Time: 10:14 PM
  */
-include 'database_functions.php';
-
-function make_table($query_result, $headers, $columns, $table_id, $caption)
-{
-    echo '<table id='.$table_id.'><caption>'.$caption.'</caption>';
-    if (!$query_result) {
-        echo "<tr><td>No results found</td></tr>";
-    }
-    else {
-        echo '<tr>';
-        foreach ($headers as $col) {
-            echo '<th>'.$col.'</th>';
-        }
-        echo '</tr>';
-        while ($row = $query_result->fetch_assoc()) {
-            echo "<tr>";
-            foreach($columns as $col) {
-                echo "<td>{$row[$col]}</td>";
-            }
-            echo "</tr>";
-        }
-    }
-    echo '</table>';
-}
+include '../database_functions.php';
+include 'report_functions.php';
 
 $full_name = $_POST['name_hint'];
+
 echo '<p>'.$full_name.'</p>';
 
 $names = explode(' ', $full_name);

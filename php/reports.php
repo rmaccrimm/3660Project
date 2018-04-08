@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="../style/basic_style.css">
     <link rel="stylesheet" href="../style/forms_style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-    <script src="../js/reports_php.js"></script>
 </head>
 <body>
 
@@ -58,11 +54,11 @@
                 <th>Description</th>
             </tr>
             <tr>
-                <td><a href="customer_report.php" title="Customer Info">Customer Info</a></td>
+                <td><a href="reports/customer_report.php" title="Customer Info">Customer Info</a></td>
                 <td>Customer contact, verhicle, payment, and warranty information.</td>
             </tr>
             <tr>
-                <td><a href="employee_report.php" title="Employee Info">Employee Info</a></td>
+                <td><a href="reports/employee_report.php" title="Employee Info">Employee Info</a></td>
                 <td>Employee information</td>
         </table>
 
