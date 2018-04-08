@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 06, 2018 at 01:35 AM
+-- Generation Time: Apr 08, 2018 at 04:05 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -39,90 +39,64 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `zip_code` char(50) NOT NULL,
   `phone` char(50) NOT NULL,
   `date_of_birth` date NOT NULL,
-  `tax_id` int(11) NOT NULL,
-  `avg_days_late` int(11) NOT NULL,
-  `late_payments` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `employee_job`
---
-
-DROP TABLE IF EXISTS `employee_job`;
-CREATE TABLE IF NOT EXISTS `employee_job` (
-  `job_id` int(11) NOT NULL,
-  `job_title` char(20) NOT NULL,
-  PRIMARY KEY (`job_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `employee_job`
---
-
-INSERT INTO `employee_job` (`job_id`, `job_title`) VALUES
-(1, 'salesperson'),
-(2, 'buyer');
-
--- --------------------------------------------------------
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`, `tax_id`, `avg_days_late`, `late_payments`) VALUES
-(0, 'SALZ', 'LAURENCE', '832 Croton Street', 'Salinas', 'Alabama', 'D0S3U3', '(826)-615-9358', '1950-11-07', 8087947, 0, 13),
-(1, 'ERNSPIKER', 'ARACELI', '790 La Mirada Street', 'Boulder', 'New York', 'U1T1F7', '(475)-211-2149', '1961-12-18', 3404883, 5, 8),
-(2, 'PIERCEFIELD', 'MARYLIN', '535 Shorrold Street', 'Naperville', 'Michigan', 'U1A9I4', '(057)-008-7465', '1943-01-17', 6769057, 10, 17),
-(3, 'MARKUS', 'DEBORA', '342 West San Carlos Street', 'Duluth', 'Indiana', 'G1P5C3', '(991)-799-5698', '1944-05-29', 703592, 16, 3),
-(4, 'ALTOBELLI', 'BRYCE', '555 N Ludlam Way', 'Lubbock', 'Wyomin', 'X5K6K0', '(413)-168-8523', '1980-06-10', 4497630, 9, 4),
-(5, 'LEVINGS', 'SUZIE', '351 Millridge Boulevard', 'Garden Grove', 'Arizona', 'Q9P9A3', '(755)-504-7589', '1977-03-27', 9877469, 6, 5),
-(6, 'RAMGEL', 'ANTONE', '33 Deer Path Way', 'Sunnyvale', 'New York', 'T6F3K8', '(649)-110-4497', '1953-10-26', 8245628, 3, 16),
-(7, 'PRASSER', 'FLORENCIA', '181 Dean Lesher Street', 'Dayton', 'Utah', 'Q5L5P1', '(560)-793-5112', '1998-03-15', 673889, 18, 17),
-(8, 'DEMRY', 'MARRY', '655 Gerome Drive', 'Ocala', 'Missouri', 'D4Y5H7', '(415)-097-0710', '1972-10-13', 2667576, 7, 17),
-(9, 'RAEHL', 'NANA', '332 Plyers Mill Drive', 'Cape Coral', 'Ohio', 'K5M8K5', '(087)-522-3561', '1980-07-11', 5300441, 18, 9),
-(10, 'VISKER', 'CRISTY', '218 Hearn Drive', 'Richmond County', 'Kansas', 'P5W5G1', '(206)-953-3050', '1972-01-12', 1719167, 14, 2),
-(11, 'OPPENHEIMER', 'LEONTINE', '50 Porto Marino Boulevard', 'Canton', 'Mississippi', 'P6X3S1', '(951)-673-4441', '1987-08-01', 5248188, 12, 8),
-(12, 'CORDONNIER', 'ROSEANNA', '156 Ferol Way', 'Beaumont', 'Ohio', 'S0U3G5', '(187)-206-4830', '1983-08-14', 9662295, 14, 13),
-(13, 'MERKSAMER', 'HANG', '86 Kingwell Boulevard', 'Portsmouth', 'Montana', 'E7T9F3', '(090)-660-2665', '1997-08-17', 6598705, 5, 9),
-(14, 'QUINOES', 'DIANA', '209 Pleasant Colony Avenue', 'Sebastian', 'Oregon', 'S2Y4P6', '(406)-837-2000', '1957-11-23', 1762877, 14, 15),
-(15, 'CLARENCE', 'CRISTEN', '674 Tunnell Boulevard', 'Virginia Beach', 'Louisiana', 'B2G9P3', '(437)-908-4336', '1976-05-26', 1916007, 9, 12),
-(16, 'ZHENG', 'TAMEKA', '522 Darvell Way', 'Green Bay', 'Louisiana', 'C4X4O9', '(351)-101-5710', '1964-07-21', 3602738, 13, 20),
-(17, 'VARAS', 'BRINDA', '157 N Emerson Drive', 'Miramar', 'Texas', 'U5X3H9', '(411)-598-6742', '1956-03-14', 3783973, 6, 4),
-(18, 'LEVERETT', 'TRANG', '260 Ghyll Avenue', 'Henderson', 'Kentucky', 'M5J2E0', '(790)-103-7823', '1950-04-13', 9000810, 8, 16),
-(19, 'GUICE', 'ROBIN', '276 Okehurst Avenue', 'Billings', 'Texas', 'J3W2R6', '(431)-411-1283', '1960-01-26', 8533752, 11, 20),
-(20, 'URPS', 'LUZ', '480 Ourisman Drive', 'Olympia', 'Arkansas', 'F0T4Q9', '(419)-418-0508', '1964-06-19', 8148581, 6, 9),
-(21, 'LOCUST', 'KIZZIE', '87 Maynestone Avenue', 'Arvada', 'Alabama', 'U1W2H5', '(120)-476-9501', '1938-09-15', 2983338, 17, 14),
-(22, 'WINARSKI', 'HILARIO', '390 Mima Street', 'Durham', 'Utah', 'O6G1O5', '(199)-164-3411', '1968-04-25', 7532769, 1, 5),
-(23, 'FINNEL', 'GABRIELLA', '103 Cornwall Street', 'Panama City', 'Mississippi', 'F3S6Y9', '(171)-062-9731', '1942-11-29', 590794, 1, 5),
-(24, 'LASHUA', 'HIROKO', '692 Gregg Road', 'Orem', 'New Hampshire', 'O5U7P6', '(375)-688-4291', '1942-03-06', 7257236, 17, 13),
-(25, 'LOWLER', 'VERDELL', '649 Stedham Road', 'North Charleston', 'Virginia', 'L6I6N9', '(955)-921-9750', '1936-05-08', 7903286, 4, 19),
-(26, 'KOVALCIK', 'DEADRA', '638 Chubbs Brook Drive', 'Hesperia', 'New Jersey', 'L2J8Z4', '(748)-932-5012', '1963-11-19', 118655, 2, 12),
-(27, 'MUNDAY', 'DEBRAH', '867 South E Drive', 'Aurora', 'Kansas', 'K9L9K5', '(773)-025-2366', '1982-05-12', 7963548, 10, 2),
-(28, 'ZAKARIAN', 'DOYLE', '125 Kyalite Avenue', 'Orem', 'Vermont', 'B6Z8O5', '(960)-100-6929', '1964-04-09', 6549551, 9, 20),
-(29, 'DRACH', 'STANLEY', '620 Silk MIll Way', 'Akron', 'Connecticut', 'O0T0X1', '(536)-741-0470', '1938-08-03', 1668950, 11, 19),
-(30, 'RAYBUCK', 'ISSAC', '361 Siskiyou Drive', 'Clarke County', 'Louisiana', 'R4C7J6', '(399)-742-0424', '1956-03-26', 5214776, 19, 11),
-(31, 'CIERLEY', 'HERMINA', '374 Bellevale Avenue', 'Bellevue', 'Oklahoma', 'M6E0M8', '(565)-335-5736', '1937-11-04', 4268236, 18, 4),
-(32, 'HORNSTEIN', 'GRAYCE', '160 Buntingford Drive', 'Ogden', 'Arizona', 'C2W9L6', '(985)-654-4560', '1930-05-08', 1796579, 10, 8),
-(33, 'VOLO', 'SHARONDA', '609 Demetrius Boulevard', 'Waco', 'Michigan', 'U9W7Z8', '(873)-860-4835', '1999-10-11', 2755736, 8, 18),
-(34, 'CORNFIELD', 'YUK', '682 Flemish Drive', 'Glendale', 'Arkansas', 'O7Z3F0', '(587)-058-0676', '1948-03-12', 4829033, 12, 4),
-(35, 'NERIO', 'MINDY', '572 Quattro Way', 'Santa Rosa', 'Virginia', 'E0L7V0', '(514)-905-7394', '1986-08-04', 5566078, 2, 10),
-(36, 'SYRSTAD', 'MARCOS', '204 Saint Benedicts Road', 'Minneapolis', 'Arkansas', 'C0M6J8', '(550)-228-5443', '1984-06-19', 3481046, 1, 5),
-(37, 'DRESSMAN', 'MELIDA', '592 Pier Approach Street', 'Sebastian', 'Wisconsin', 'U4W7A6', '(227)-786-8127', '1957-04-17', 9116564, 19, 4),
-(38, 'GLIMPSE', 'SHAWN', '154 E Wheelock Drive', 'Saginaw', 'New York', 'R7T0C3', '(060)-545-0277', '1986-09-17', 8670561, 13, 2),
-(39, 'KOLKMAN', 'TOBIE', '302 Marble Fawn Boulevard', 'Trenton', 'Montana', 'T8E8V6', '(144)-388-7127', '1996-03-25', 805079, 3, 17),
-(40, 'WRIGLEY', 'ROSEMARIE', '886 Fara Avenue', 'Marysville', 'Iowa', 'H2F3N6', '(264)-898-6673', '1942-12-05', 7434886, 3, 14),
-(41, 'FARQUHARSON', 'DENNISE', '173 Horseshoe Bend Drive', 'Hollywood', 'Texas', 'V0S1G0', '(764)-965-6946', '1978-06-23', 9155767, 18, 3),
-(42, 'KIES', 'ALDEN', '23 Darnel Street', 'Killeen', 'Oregon', 'G8U4H8', '(230)-061-6062', '1931-09-11', 1729323, 8, 20),
-(43, 'COOCH', 'SIMONA', '785 Lake Lawn Street', 'Fargo', 'Mississippi', 'W6A7E8', '(623)-405-5877', '1997-12-14', 9159950, 17, 2),
-(44, 'MALEKZADEH', 'EUGENIE', '657 Ensign Street', 'Eugene', 'Illinois', 'M0Q0E9', '(072)-818-8495', '1985-09-22', 96828, 1, 0),
-(45, 'GUGLIELMO', 'CUC', '793 E Fulton Avenue', 'Harlingen', 'Arkansas', 'T0J8B4', '(392)-322-5011', '1967-03-29', 1071440, 12, 20),
-(46, 'OZGA', 'EMERSON', '951 St. Ives Avenue', 'Visalia', 'Delaware', 'C9K9J7', '(709)-662-4595', '1942-08-02', 3648034, 6, 9),
-(47, 'DIMERY', 'ERNA', '613 W Regan Boulevard', 'Palm Bay', 'California', 'J7H0V8', '(209)-818-7570', '1937-11-09', 5545701, 6, 10),
-(48, 'KABIGTING', 'SEBRINA', '464 Geranimo Road', 'Tacoma', 'Connecticut', 'E4L8K7', '(644)-298-3664', '1959-11-11', 3694637, 2, 15),
-(49, 'DEFRANCO', 'PHOEBE', '247 Asiatic Road', 'Madison', 'South Dakota', 'Z5X5W8', '(067)-783-5132', '1936-09-20', 5062223, 18, 17);
+INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`) VALUES
+(0, 'SALZ', 'LAURENCE', '832 Croton Street', 'Salinas', 'Alabama', 'D0S3U3', '(826)-615-9358', '1950-11-07'),
+(1, 'ERNSPIKER', 'ARACELI', '790 La Mirada Street', 'Boulder', 'New York', 'U1T1F7', '(475)-211-2149', '1961-12-18'),
+(2, 'PIERCEFIELD', 'MARYLIN', '535 Shorrold Street', 'Naperville', 'Michigan', 'U1A9I4', '(057)-008-7465', '1943-01-17'),
+(3, 'MARKUS', 'DEBORA', '342 West San Carlos Street', 'Duluth', 'Indiana', 'G1P5C3', '(991)-799-5698', '1944-05-29'),
+(4, 'ALTOBELLI', 'BRYCE', '555 N Ludlam Way', 'Lubbock', 'Wyomin', 'X5K6K0', '(413)-168-8523', '1980-06-10'),
+(5, 'LEVINGS', 'SUZIE', '351 Millridge Boulevard', 'Garden Grove', 'Arizona', 'Q9P9A3', '(755)-504-7589', '1977-03-27'),
+(6, 'RAMGEL', 'ANTONE', '33 Deer Path Way', 'Sunnyvale', 'New York', 'T6F3K8', '(649)-110-4497', '1953-10-26'),
+(7, 'PRASSER', 'FLORENCIA', '181 Dean Lesher Street', 'Dayton', 'Utah', 'Q5L5P1', '(560)-793-5112', '1998-03-15'),
+(8, 'DEMRY', 'MARRY', '655 Gerome Drive', 'Ocala', 'Missouri', 'D4Y5H7', '(415)-097-0710', '1972-10-13'),
+(9, 'RAEHL', 'NANA', '332 Plyers Mill Drive', 'Cape Coral', 'Ohio', 'K5M8K5', '(087)-522-3561', '1980-07-11'),
+(10, 'VISKER', 'CRISTY', '218 Hearn Drive', 'Richmond County', 'Kansas', 'P5W5G1', '(206)-953-3050', '1972-01-12'),
+(11, 'OPPENHEIMER', 'LEONTINE', '50 Porto Marino Boulevard', 'Canton', 'Mississippi', 'P6X3S1', '(951)-673-4441', '1987-08-01'),
+(12, 'CORDONNIER', 'ROSEANNA', '156 Ferol Way', 'Beaumont', 'Ohio', 'S0U3G5', '(187)-206-4830', '1983-08-14'),
+(13, 'MERKSAMER', 'HANG', '86 Kingwell Boulevard', 'Portsmouth', 'Montana', 'E7T9F3', '(090)-660-2665', '1997-08-17'),
+(14, 'QUINOES', 'DIANA', '209 Pleasant Colony Avenue', 'Sebastian', 'Oregon', 'S2Y4P6', '(406)-837-2000', '1957-11-23'),
+(15, 'CLARENCE', 'CRISTEN', '674 Tunnell Boulevard', 'Virginia Beach', 'Louisiana', 'B2G9P3', '(437)-908-4336', '1976-05-26'),
+(16, 'ZHENG', 'TAMEKA', '522 Darvell Way', 'Green Bay', 'Louisiana', 'C4X4O9', '(351)-101-5710', '1964-07-21'),
+(17, 'VARAS', 'BRINDA', '157 N Emerson Drive', 'Miramar', 'Texas', 'U5X3H9', '(411)-598-6742', '1956-03-14'),
+(18, 'LEVERETT', 'TRANG', '260 Ghyll Avenue', 'Henderson', 'Kentucky', 'M5J2E0', '(790)-103-7823', '1950-04-13'),
+(19, 'GUICE', 'ROBIN', '276 Okehurst Avenue', 'Billings', 'Texas', 'J3W2R6', '(431)-411-1283', '1960-01-26'),
+(20, 'URPS', 'LUZ', '480 Ourisman Drive', 'Olympia', 'Arkansas', 'F0T4Q9', '(419)-418-0508', '1964-06-19'),
+(21, 'LOCUST', 'KIZZIE', '87 Maynestone Avenue', 'Arvada', 'Alabama', 'U1W2H5', '(120)-476-9501', '1938-09-15'),
+(22, 'WINARSKI', 'HILARIO', '390 Mima Street', 'Durham', 'Utah', 'O6G1O5', '(199)-164-3411', '1968-04-25'),
+(23, 'FINNEL', 'GABRIELLA', '103 Cornwall Street', 'Panama City', 'Mississippi', 'F3S6Y9', '(171)-062-9731', '1942-11-29'),
+(24, 'LASHUA', 'HIROKO', '692 Gregg Road', 'Orem', 'New Hampshire', 'O5U7P6', '(375)-688-4291', '1942-03-06'),
+(25, 'LOWLER', 'VERDELL', '649 Stedham Road', 'North Charleston', 'Virginia', 'L6I6N9', '(955)-921-9750', '1936-05-08'),
+(26, 'KOVALCIK', 'DEADRA', '638 Chubbs Brook Drive', 'Hesperia', 'New Jersey', 'L2J8Z4', '(748)-932-5012', '1963-11-19'),
+(27, 'MUNDAY', 'DEBRAH', '867 South E Drive', 'Aurora', 'Kansas', 'K9L9K5', '(773)-025-2366', '1982-05-12'),
+(28, 'ZAKARIAN', 'DOYLE', '125 Kyalite Avenue', 'Orem', 'Vermont', 'B6Z8O5', '(960)-100-6929', '1964-04-09'),
+(29, 'DRACH', 'STANLEY', '620 Silk MIll Way', 'Akron', 'Connecticut', 'O0T0X1', '(536)-741-0470', '1938-08-03'),
+(30, 'RAYBUCK', 'ISSAC', '361 Siskiyou Drive', 'Clarke County', 'Louisiana', 'R4C7J6', '(399)-742-0424', '1956-03-26'),
+(31, 'CIERLEY', 'HERMINA', '374 Bellevale Avenue', 'Bellevue', 'Oklahoma', 'M6E0M8', '(565)-335-5736', '1937-11-04'),
+(32, 'HORNSTEIN', 'GRAYCE', '160 Buntingford Drive', 'Ogden', 'Arizona', 'C2W9L6', '(985)-654-4560', '1930-05-08'),
+(33, 'VOLO', 'SHARONDA', '609 Demetrius Boulevard', 'Waco', 'Michigan', 'U9W7Z8', '(873)-860-4835', '1999-10-11'),
+(34, 'CORNFIELD', 'YUK', '682 Flemish Drive', 'Glendale', 'Arkansas', 'O7Z3F0', '(587)-058-0676', '1948-03-12'),
+(35, 'NERIO', 'MINDY', '572 Quattro Way', 'Santa Rosa', 'Virginia', 'E0L7V0', '(514)-905-7394', '1986-08-04'),
+(36, 'SYRSTAD', 'MARCOS', '204 Saint Benedicts Road', 'Minneapolis', 'Arkansas', 'C0M6J8', '(550)-228-5443', '1984-06-19'),
+(37, 'DRESSMAN', 'MELIDA', '592 Pier Approach Street', 'Sebastian', 'Wisconsin', 'U4W7A6', '(227)-786-8127', '1957-04-17'),
+(38, 'GLIMPSE', 'SHAWN', '154 E Wheelock Drive', 'Saginaw', 'New York', 'R7T0C3', '(060)-545-0277', '1986-09-17'),
+(39, 'KOLKMAN', 'TOBIE', '302 Marble Fawn Boulevard', 'Trenton', 'Montana', 'T8E8V6', '(144)-388-7127', '1996-03-25'),
+(40, 'WRIGLEY', 'ROSEMARIE', '886 Fara Avenue', 'Marysville', 'Iowa', 'H2F3N6', '(264)-898-6673', '1942-12-05'),
+(41, 'FARQUHARSON', 'DENNISE', '173 Horseshoe Bend Drive', 'Hollywood', 'Texas', 'V0S1G0', '(764)-965-6946', '1978-06-23'),
+(42, 'KIES', 'ALDEN', '23 Darnel Street', 'Killeen', 'Oregon', 'G8U4H8', '(230)-061-6062', '1931-09-11'),
+(43, 'COOCH', 'SIMONA', '785 Lake Lawn Street', 'Fargo', 'Mississippi', 'W6A7E8', '(623)-405-5877', '1997-12-14'),
+(44, 'MALEKZADEH', 'EUGENIE', '657 Ensign Street', 'Eugene', 'Illinois', 'M0Q0E9', '(072)-818-8495', '1985-09-22'),
+(45, 'GUGLIELMO', 'CUC', '793 E Fulton Avenue', 'Harlingen', 'Arkansas', 'T0J8B4', '(392)-322-5011', '1967-03-29'),
+(46, 'OZGA', 'EMERSON', '951 St. Ives Avenue', 'Visalia', 'Delaware', 'C9K9J7', '(709)-662-4595', '1942-08-02'),
+(47, 'DIMERY', 'ERNA', '613 W Regan Boulevard', 'Palm Bay', 'California', 'J7H0V8', '(209)-818-7570', '1937-11-09'),
+(48, 'KABIGTING', 'SEBRINA', '464 Geranimo Road', 'Tacoma', 'Connecticut', 'E4L8K7', '(644)-298-3664', '1959-11-11'),
+(49, 'DEFRANCO', 'PHOEBE', '247 Asiatic Road', 'Madison', 'South Dakota', 'Z5X5W8', '(067)-783-5132', '1936-09-20');
 
 -- --------------------------------------------------------
 
@@ -200,6 +174,27 @@ INSERT INTO `employee` (`employee_id`, `last_name`, `first_name`, `phone`, `job_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `employee_job`
+--
+
+DROP TABLE IF EXISTS `employee_job`;
+CREATE TABLE IF NOT EXISTS `employee_job` (
+  `job_id` int(11) NOT NULL,
+  `job_title` char(20) NOT NULL,
+  PRIMARY KEY (`job_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_job`
+--
+
+INSERT INTO `employee_job` (`job_id`, `job_title`) VALUES
+(1, 'salesperson'),
+(2, 'buyer');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `employment_history`
 --
 
@@ -233,6 +228,22 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `amount` float NOT NULL,
   `bank_account` int(11) NOT NULL,
   PRIMARY KEY (`payment_id`),
+  KEY `FK_CUSTOMER_ID` (`customer_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_info`
+--
+
+DROP TABLE IF EXISTS `payment_info`;
+CREATE TABLE IF NOT EXISTS `payment_info` (
+  `tax_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `avg_days_late` int(11) NOT NULL,
+  `late_payments` int(11) NOT NULL,
+  PRIMARY KEY (`tax_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -403,6 +414,12 @@ ALTER TABLE `employment_history`
 --
 ALTER TABLE `payment`
   ADD CONSTRAINT `payment_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE SET NULL ON UPDATE CASCADE;
+
+--
+-- Constraints for table `payment_info`
+--
+ALTER TABLE `payment_info`
+  ADD CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `purchase`
