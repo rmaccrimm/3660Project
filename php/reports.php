@@ -60,6 +60,15 @@
             <tr>
                 <td><a href="reports/employee_report.php" title="Employee Info">Employee Info</a></td>
                 <td>Employee information</td>
+            </tr>
+            <tr>
+                <td><a href="reports/sold_vehicle_report.php" title="Vehicle List">Vehicle Sold</a></td>
+                <td>A list of all vehicles that have been sold at Westside Auto</td>
+            </tr>
+            <tr>
+                <td><a href="reports/unsold_vehicle_report.php" title="Inventory">Inventory</a></td>
+                <td>A list of all unsold vehicles currently at Westside Auto</td>
+            </tr>
         </table>
 
         <div class="ui-widget" id="form_ajax_result">
