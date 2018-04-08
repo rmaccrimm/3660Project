@@ -153,7 +153,7 @@
             </div>
 
             <div id="all_problems">
-                <button id="add_new_problem_button">+ New problem</button>
+                <button type='button' id="add_new_problem_button">+ New problem</button>
                 <!-- jQuery problem 1, 2, 3, ... -->
             </div>
 

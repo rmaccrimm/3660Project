@@ -31,19 +31,18 @@ $(function() {
         new_elements += "<p>Problem " + (problem_counter + 1) + "</p>";
 
         // Delete problem button
-        new_elements += "<button class='delete_button'>Delete</button>";
+        new_elements += "<button type='button' class='delete_button'>Delete</button>";
 
         // Problem Description Text Box
         new_elements += "<label for='problem_desc'>Description</label>";
-
         new_elements += "<input type='text' name=" + description_id + " id=" + description_id + ">";
+
         // Estimated Cost Input
         new_elements += "<label for='problem_estimated_cost'>$ Estimated Cost</label>";
-
         new_elements += "<input value='0' type='number' min='0' step='10' name=" + estimated_cost_id + " id=" + estimated_cost_id + ">";
+
         //Actual Cost Input
         new_elements += "<label for='problem_actual_cost'>$ Actual Cost</label>";
-
         new_elements += "<input value='0' type='number' min='0' step='10' name=" + actual_cost_id + " id=" + actual_cost_id + ">";
 
         new_elements += "</div>";
@@ -51,13 +50,14 @@ $(function() {
         // We want the new problem button to be at the bottom all the time
         $(new_elements).insertBefore('#add_new_problem_button');
 
-        problem_counter += 1;
+        problem_counter++;
     });
 
     var delete_problem_button = $('.delete_button');
 
-    delete_problem_button.on('click', function(e){
-
+    $("#all_problems").on('click', '.delete_button', function(e){
+        $(this).parent().remove();
+        problem_counter--;
     });
 
     function format_str_and_counter(str, counter) {
