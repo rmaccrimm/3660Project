@@ -58,7 +58,7 @@
                     form out before the <em>Purchase Car</em> form can be filled out.</td>
             </tr>
             <tr>
-                <td><a href="#purchase_form.php" title="Purchase Car">Purchase Car</a></td>
+                <td><a href="purchase_form.php" title="Purchase Car">Purchase Car</a></td>
                 <td>Form that buyers fill out when purchasing a car. Individual problems are spotted
                     and numbered. It is company policy to avoid cars in need of major repairs.</td>
             </tr>

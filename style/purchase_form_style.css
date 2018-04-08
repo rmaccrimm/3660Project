@@ -1,0 +1,6 @@
+#auction_radios * {
+    /* I want radio buttons on the same line
+    so I'm overriding display: block for form elements
+    within auction_radios*/
+    display: inline;
+}
