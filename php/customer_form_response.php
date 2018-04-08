@@ -26,9 +26,12 @@ $tax = db_quote($_POST['customer_tax_id']);
 $dob = db_quote($_POST['customer_dob']);
 
 // Check if the customer already exists
-$rows = db_select("SELECT customer_id FROM customer WHERE first_name={$f_name} AND last_name={$l_name} AND date_of_birth={$dob}");
-$already_exists = ($rows) ? true : false;
-
+$already_exists = db_select(
+    "SELECT customer_id FROM customer" .
+    " WHERE first_name={$f_name} " .
+    "AND last_name={$l_name} " .
+    "AND date_of_birth={$dob}"
+) ? true : false;
 
 $result = false;
 if (!$already_exists) {
