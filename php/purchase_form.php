@@ -80,11 +80,51 @@
 
                     <label for="vehicle_make">Vehicle Make</label>
                     <input type="text" name="vehicle_make" id="vehicle_make" required>
+
+                    <label for="exterior_color">Exterior Color</label>
+                    <select name="exterior_color" id="exterior_color" required>
+                        <option value="black" selected="selected">Black</option>
+                        <option value="blue">Blue</option>
+                        <option value="brown">Brown</option>
+                        <option value="grey">Grey</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="silver">Silver</option>
+                        <option value="orange">Orange</option>
+                        <option value="pink">Pink</option>
+                        <option value="white">White</option>
+                        <option value="yellow">Yellow</option>
+                    </select>
+
+                    <label for="interior_color">Interior Color</label>
+                    <select name="interior_color" id="interior_color" required>
+                        <option value="black" selected="selected">Black</option>
+                        <option value="blue">Blue</option>
+                        <option value="brown">Brown</option>
+                        <option value="grey">Grey</option>
+                        <option value="green">Green</option>
+                        <option value="red">Red</option>
+                        <option value="silver">Silver</option>
+                        <option value="orange">Orange</option>
+                        <option value="pink">Pink</option>
+                        <option value="white">White</option>
+                        <option value="yellow">Yellow</option>
+                    </select>
+
                 </div>
                 <div class="form_col">
 
-                    <label for="vehicle_color">Vehicle Color</label>
-                    <input type="text" name="vehicle_color" id="vehicle_color" required>
+                    <label for="style">Style</label>
+                    <select name="style" id="style" required>
+                        <option value="sedan" selected="selected">Sedan</option>
+                        <option value="coupe">Coupe</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="wagon">Wagon</option>
+                        <option value="truck">Truck</option>
+                        <option value="suv">SUV</option>
+                        <option value="van">Van</option>
+                        <option value="motorcycle">Motorcycle</option>
+                    </select>
 
                     <label for="vehicle_model">Vehicle Model</label>
                     <input type="text" name="vehicle_model" id="vehicle_model" required>
@@ -109,9 +149,14 @@
                         <option value="Poor">Poor</option>
                         <option value="Terrible">Terrible</option>
                     </select>
-
                 </div>
             </div>
+
+            <div id="all_problems">
+                <button id="add_new_problem_button">+ New problem</button>
+                <!-- jQuery problem 1, 2, 3, ... -->
+            </div>
+
             <!-- submit button not in either column -->
             <input id="form_submit" type="submit" value="Submit">
         </form>
