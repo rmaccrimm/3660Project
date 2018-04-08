@@ -7,8 +7,10 @@
  */
 
 include 'database_functions.php';
+include 'customer_report.php';
 $selection = $_POST['report_select'];
 ?>
+
 
 <!-- Output the opening table tag -->
 <table id="form_table" ><caption><?=$selection?></caption>
@@ -27,7 +29,8 @@ $selection = $_POST['report_select'];
     </div>
 
 <?php
-    $cust_headers = ['Last name', 'First name', 'Address', 'City', 'State', 'Zip Code', 'Phone', 'Date of Birth'];
+    customer_report('LAURENCE SALZ');
+    /*$cust_headers = ['Last name', 'First name', 'Address', 'City', 'State', 'Zip Code', 'Phone', 'Date of Birth'];
     $cust_cols = ['last_name', 'first_name', 'address', 'city', 'state', 'zip_code', 'phone', 'date_of_birth'];
     $query = 'SELECT ';
     $query_names = 'SELECT first_name, last_name FROM customer';
@@ -39,7 +42,7 @@ $selection = $_POST['report_select'];
             ucfirst(strtolower($row['first_name']))
             . ' '
             . ucfirst(strtolower($row['last_name'])));
-    }
+    }*/
 ?>
 
     <script type="text/javascript">
