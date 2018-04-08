@@ -10,6 +10,8 @@
 <head>
     <title>Reports</title>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/purchase_form.js"></script>
     <link rel="stylesheet" href="../style/basic_style.css">
     <link rel="stylesheet" href="../style/forms_style.css">
     <link rel="stylesheet" href="../style/entry_form_style.css">
@@ -53,6 +55,11 @@
             <!-- Going for a two column form here -->
             <div class="form_row">
                 <div class="form_col">
+                    <label for="employee_id">Employee Id</label>
+                    <select id="employee_id" name="employee_id">
+
+                    </select>
+
                     <label for="date">Date</label>
                     <input type="date" name="date" id="date" required>
 
@@ -73,12 +80,12 @@
 
                     <label for="vehicle_make">Vehicle Make</label>
                     <input type="text" name="vehicle_make" id="vehicle_make" required>
+                </div>
+                <div class="form_col">
 
                     <label for="vehicle_color">Vehicle Color</label>
                     <input type="text" name="vehicle_color" id="vehicle_color" required>
 
-                </div>
-                <div class="form_col">
                     <label for="vehicle_model">Vehicle Model</label>
                     <input type="text" name="vehicle_model" id="vehicle_model" required>
 

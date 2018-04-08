@@ -4,3 +4,7 @@
     within auction_radios*/
     display: inline;
 }
+
+#employee_id {
+    width: 150px;
+}
