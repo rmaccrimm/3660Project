@@ -16,13 +16,11 @@ $(function() {
     var problem_div = $("#all_problems");
 
     new_problem_button.on('click', function(e) {
-        e.preventDefault();
 
         let div_id = format_str_and_counter('problem', problem_counter);
         let description_id = format_str_and_counter('problem_desc', problem_counter);
         let estimated_cost_id = format_str_and_counter('problem_estimated_cost', problem_counter);
         let actual_cost_id = format_str_and_counter('problem_actual_cost', problem_counter);
-        let delete_button_id = format_str_and_counter('delete_problem', problem_counter);
 
         let new_elements = "<br><hr>";
         new_elements = "<div id=" + div_id + ">";
@@ -30,7 +28,8 @@ $(function() {
         // Problem counter is incremented by one to avoid 'Problem 0' being displayed
         new_elements += "<p>Problem " + (problem_counter + 1) + "</p>";
 
-        // Delete problem button
+        // Delete problem button, all buttons are same class and delete their parent
+        // @see below
         new_elements += "<button type='button' class='delete_button'>Delete</button>";
 
         // Problem Description Text Box
@@ -56,6 +55,7 @@ $(function() {
     var delete_problem_button = $('.delete_button');
 
     $("#all_problems").on('click', '.delete_button', function(e){
+        // Bind dynamically created delete button to delete parents
         $(this).parent().remove();
         problem_counter--;
     });
