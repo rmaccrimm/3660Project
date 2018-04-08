@@ -1,3 +1,10 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../style/basic_style.css">
+</head>
+<body>
+<div id="content-wrapper">
+
 <?php
 /**
  * Created by PhpStorm.
@@ -36,9 +43,10 @@ $already_exists = db_select(
 $result = false;
 if (!$already_exists) {
     // Make a new customer
-    $result = db_query("INSERT INTO customer " .
-        "(first_name, last_name, phone, address, city, state, zip_code, gender, tax_id, date_of_birth) " .
-        "VALUES ({$f_name}, {$l_name}, {$phone}, {$address}, {$city}, {$state}, {$zip}, {$gender}, {$tax}, {$dob})");
+    $result = db_query(
+            "INSERT INTO customer " .
+            "(first_name, last_name, phone, address, city, state, zip_code, gender, tax_id, date_of_birth) " .
+            "VALUES ({$f_name}, {$l_name}, {$phone}, {$address}, {$city}, {$state}, {$zip}, {$gender}, {$tax}, {$dob})");
 }?>
 
 <!-- Output some text to the user depending on result, a little janky -->
@@ -52,3 +60,7 @@ if (!$already_exists) {
     <p>Customer already exists! To go back, click <a href="customer_form.php" title="Go back to customer form">here</a></p>
 <?php endif;?>
 
+</div>
+</body>
+
+</html>
