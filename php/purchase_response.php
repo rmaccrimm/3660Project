@@ -1,3 +1,11 @@
+<html>
+<head>
+    <link rel="stylesheet" href="../style/basic_style.css">
+</head>
+</html>
+<body>
+<div id="content-wrapper">
+
 <?php
 /**
  * Created by PhpStorm.
@@ -27,7 +35,7 @@ $car_values['year'] = db_quote($_POST['vehicle_year']);
 $vehicle_id = make_car_entry($car_values);
 
 if (!$vehicle_id) {
-    die("Could not make new car, quitting...");
+    $msg = "Could not make new car, click <a href='purchase_form.php' title='Purchase form'>here</a> to go back. ";
 }
 
 $sale_values = array();
@@ -38,7 +46,7 @@ $sale_values['auction'] = db_quote($_POST['auction']);
 
 $purchase_id = make_purchase_entry($sale_values, $vehicle_id);
 
-make_problem_entries($purchase_id);
+$problem_id = make_problem_entries($purchase_id);
 
 function make_purchase_entry($inputs, $vehicle_id) {
     /*
@@ -63,6 +71,7 @@ function make_problem_entries($purchase_id) {
             "VALUES ({$problem['description']}, {$purchase_id}, {$problem['estimated']}, {$problem['actual']})");
         db_query($sql);
     }
+    return db_last_insert();
 }
 
 function make_car_entry($inputs) {
@@ -114,4 +123,14 @@ function find_car_problems($array) {
         }
     }
     return $problems;
-}
+}?>
+
+<?php if ($vehicle_id and $purchase_id and $problem_id):?>
+    <p>Success! To go back, click <a href="purchase_form.php" title="Go back to customer form">here</a></p>
+<?php else:?>
+    <p>Failure! To go back, click <a href="purchase_form.php" title="Go back to purchase form">here</a></p>
+<?php endif;?>
+
+</div>
+</body>
+
