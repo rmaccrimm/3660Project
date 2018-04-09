@@ -67,7 +67,7 @@ include 'report_functions.php'
 
     <?php
     $sold_query =
-        'SELECT make, model, `year`, style, vehicle_condition, book_price, sale_price, E.last_name, C.last_name, `date`
+        'SELECT make, model, `year`, style, vehicle_condition, book_price, sale_price, E.last_name as sold, C.last_name as bought, `date`
          FROM vehicle as V, vehicle_owner as VO, employee as E, customer as C, sale as S
          WHERE VO.vehicle_id = V.vehicle_id 
                AND VO.customer_id = C.customer_id
@@ -77,7 +77,7 @@ include 'report_functions.php'
     make_table(
             db_query($sold_query),
             ['Make', 'Model', 'Year', 'Style', 'Condition', 'Book Price', 'Sale Price', 'Sold by', 'Sold to', 'Date'],
-            ['make', 'model', 'year', 'style', 'vehicle_condition', 'book_price', 'sale_price', 'last_name', 'last_name', 'date'],
+            ['make', 'model', 'year', 'style', 'vehicle_condition', 'book_price', 'sale_price', 'sold', 'bought', 'date'],
             ''
     );
     ?>

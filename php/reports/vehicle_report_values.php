@@ -11,7 +11,7 @@ require_once("../database_functions.php");
 $all_cars = db_select('SELECT exterior_color, `year`, make, model, vehicle_id FROM vehicle');
 
 foreach($all_cars as $car):
-    $id = $car['vehicle_id'];
+    $id = (int)$car['vehicle_id'];
     $make = $car['make'];
     $model = $car['model'];
     $year = $car['year'];
