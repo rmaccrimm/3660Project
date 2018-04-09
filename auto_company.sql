@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2018 at 04:13 AM
+-- Generation Time: Apr 09, 2018 at 04:03 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -42,14 +42,15 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `gender` char(20) NOT NULL,
   `tax_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`, `gender`, `tax_id`) VALUES
-(1, 'TACO', 'FISH', 'sf', 'l;kj;', 'AL', 'TKJDFE', '3023123123123', '1980-02-12', 'male', 123123);
+(1, 'TACO', 'FISH', 'sf', 'l;kj;', 'AL', 'TKJDFE', '3023123123123', '1980-02-12', 'male', 123123),
+(2, 'Toly', 'Ethan', 'Ethans House', 'Lethbridge', 'AL', '90210', '403-911-9111', '2018-04-03', 'female', 222233);
 
 -- --------------------------------------------------------
 
@@ -73,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `commission` float DEFAULT NULL,
   PRIMARY KEY (`employee_id`),
   KEY `FK_JOB_ID` (`job_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
@@ -81,7 +82,9 @@ CREATE TABLE IF NOT EXISTS `employee` (
 
 INSERT INTO `employee` (`employee_id`, `last_name`, `first_name`, `phone`, `job_id`, `address`, `city`, `state`, `zip_code`, `gender`, `date_of_birth`, `commission`) VALUES
 (2, 'Johnathonson', 'John', '123-123123-232', 1, 'B', 'B', 'CA', '123123', 'male', '2019-12-12', NULL),
-(3, 'Bobobobob', 'Bob', '1-1-1-1-1-1-1-', 2, 'A', 'A', 'DE', '123123', 'female', '0012-12-12', 10);
+(3, 'Bobob', 'Bob', '1-1-1-1-1-1-1-', 2, 'A', 'A', 'DE', '123123', 'female', '0012-12-12', 10),
+(4, 'Duke', 'Guy', '403-101-1000', 1, 'Guys House', 'Lethbridge', 'AL', '02993', 'other', '2018-04-26', NULL),
+(5, 'MacCrimmon', 'Roddy', '1231231233', 2, '11 2 Ave N', 'Lethbridge', 'AL', '231lkj', 'male', '1880-01-01', 10);
 
 -- --------------------------------------------------------
 
@@ -119,23 +122,18 @@ CREATE TABLE IF NOT EXISTS `employment_history` (
   `phone` char(20) NOT NULL,
   `address` char(50) NOT NULL,
   `start` date NOT NULL,
-  `employment_hist_id` int(11) NOT NULL,
+  `employment_hist_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`employment_hist_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employment_history`
 --
 
 INSERT INTO `employment_history` (`customer_id`, `employer`, `title`, `supervisor`, `phone`, `address`, `start`, `employment_hist_id`) VALUES
-(61, 'Lumencraft', 'Employee', 'CECILE MCCANDLISH', '219339239', '539 Wastdale Way', '1962-03-09', 0),
-(84, 'International Business Machines (IBM)', 'Goon', 'JANNETTE LARRISON', '544379569', '892 E Bexhill Avenue', '1990-03-29', 1),
-(27, 'Eureka', 'Employee', 'CAMILLE MATIER', '708626187', '675 East Sargent Street', '1995-02-18', 2),
-(67, 'Chevron', 'Pipe Fitter', 'MANDA ZAVCEDO', '185625480', '846 Lullaby Street', '2004-11-16', 3),
-(22, 'Sunny Real Estate Investments', 'CEO', 'KARREN DENNY', '504645315', '410 Northeast Ames Lake Avenue', '1983-10-14', 4),
-(61, 'Syntel', 'Pipe Fitter', 'SOCORRO COSSABOON', '375244940', '142 Elverston Boulevard', '1940-05-19', 5),
-(74, 'Hardee\'s', 'CEO', 'HATTIE NEITZEL', '912491352', '553 Wayletts Road', '1950-06-24', 6);
+(1, 'Farmers Edge', 'Guy', 'Other guy', '403 999 9999', 'Farm Rd W', '2018-04-18', 1),
+(2, 'McDonalds', 'Burger guy', 'Joe Smith', '403-333-3333', 'downtown lethbridge', '2017-01-01', 2);
 
 -- --------------------------------------------------------
 
@@ -153,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `bank_account` int(11) NOT NULL,
   PRIMARY KEY (`payment_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `payment`
@@ -176,7 +174,10 @@ INSERT INTO `payment` (`payment_id`, `customer_id`, `payment_date`, `due_date`, 
 (14, 0, '1212-12-11', '1212-12-22', 123, 123),
 (15, 1, '1212-12-12', '2000-12-12', 123123, 123123),
 (16, 1, '1212-12-12', '1213-12-12', 123123, 123123),
-(17, 1, '1212-12-12', '1211-12-12', 123123, 123123);
+(17, 1, '1212-12-12', '1211-12-12', 123123, 123123),
+(18, 1, '2018-04-10', '2018-04-14', 25, 999999),
+(19, 1, '2018-04-10', '2018-04-14', 25, 9999990),
+(20, 1, '2018-04-03', '2018-04-27', 2, 84844);
 
 -- --------------------------------------------------------
 
@@ -238,15 +239,17 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   PRIMARY KEY (`purchase_id`),
   KEY `FK_VEHICLE_ID` (`vehicle_id`),
   KEY `FK_EMP_ID` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `purchase`
 --
 
 INSERT INTO `purchase` (`date`, `location`, `auction`, `employee_id`, `vehicle_id`, `purchase_id`) VALUES
-('1212-12-12', 'asdf', 1, 0, 3, 1),
-('1212-12-12', 'Here', 1, 2, 4, 2);
+('2018-01-01', 'Coaldale', 1, 2, 8, 6),
+('2018-01-01', 'Lethbridge', 1, 2, 9, 7),
+('2018-01-01', 'Calgary', 1, 4, 10, 8),
+('2018-01-01', 'Calgary', 1, 2, 11, 9);
 
 -- --------------------------------------------------------
 
@@ -256,7 +259,7 @@ INSERT INTO `purchase` (`date`, `location`, `auction`, `employee_id`, `vehicle_i
 
 DROP TABLE IF EXISTS `sale`;
 CREATE TABLE IF NOT EXISTS `sale` (
-  `sale_id` int(11) NOT NULL,
+  `sale_id` int(11) NOT NULL AUTO_INCREMENT,
   `employee_id` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
   `date` date NOT NULL,
@@ -266,33 +269,14 @@ CREATE TABLE IF NOT EXISTS `sale` (
   PRIMARY KEY (`sale_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`),
   KEY `FK_EMP_ID` (`employee_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sale`
 --
 
 INSERT INTO `sale` (`sale_id`, `employee_id`, `customer_id`, `date`, `total_due`, `down_payment`, `finance_amount`) VALUES
-(0, 78, 23, '2017-08-02', '8', '34', '91'),
-(1, 59, 23, '2013-05-28', '66', '69', '62'),
-(2, 95, 14, '2017-05-15', '4', '82', '18'),
-(3, 46, 36, '2002-03-02', '48', '84', '91'),
-(4, 67, 89, '2010-09-26', '0', '23', '80'),
-(5, 26, 90, '2014-04-23', '8', '87', '40'),
-(6, 83, 75, '2006-09-28', '22', '77', '42'),
-(7, 55, 20, '2016-08-16', '29', '44', '65'),
-(8, 42, 95, '2006-05-28', '34', '55', '74'),
-(9, 9, 26, '2017-05-17', '19', '58', '71'),
-(10, 16, 71, '2015-10-07', '81', '95', '100'),
-(11, 62, 44, '1999-09-09', '33', '5', '60'),
-(12, 57, 29, '2002-06-17', '71', '67', '23'),
-(13, 74, 40, '2011-11-10', '67', '47', '40'),
-(14, 28, 71, '2012-12-16', '26', '27', '100'),
-(15, 97, 86, '2004-10-03', '71', '45', '96'),
-(16, 54, 95, '2009-08-28', '17', '22', '15'),
-(17, 65, 58, '2013-04-21', '22', '66', '95'),
-(18, 69, 8, '2011-06-05', '74', '12', '84'),
-(19, 30, 76, '2010-03-24', '93', '60', '15');
+(10, 5, 2, '2018-01-01', '5000', '2500', '10');
 
 -- --------------------------------------------------------
 
@@ -314,17 +298,17 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `model` char(20) NOT NULL,
   `year` year(4) NOT NULL,
   PRIMARY KEY (`vehicle_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle`
 --
 
 INSERT INTO `vehicle` (`vehicle_id`, `miles`, `vehicle_condition`, `book_price`, `sale_price`, `style`, `exterior_color`, `interior_color`, `make`, `model`, `year`) VALUES
-(1, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
-(2, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
-(3, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
-(4, 11000500, 'Excellent', 200, 3245, 'sedan', 'black', 'orange', 'Honda', 'Civic', 2018);
+(8, 200000, 'Good', 30000, 10000, 'truck', 'black', 'black', 'Dodge', 'Ram', 2011),
+(9, 350000, 'Poor', 10000, 2500, 'sedan', 'silver', 'grey', 'Volkswagen', 'Beetle', 1990),
+(10, 50000, 'Excellent', 25000, 10000, 'hatchback', 'pink', 'grey', 'Honda', 'Civic', 2015),
+(11, 200000, 'Average', 15000, 2000, 'sedan', 'red', 'black', 'Ford', 'F1-50', 2001);
 
 -- --------------------------------------------------------
 
@@ -338,6 +322,15 @@ CREATE TABLE IF NOT EXISTS `vehicle_owner` (
   `vehicle_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`,`vehicle_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vehicle_owner`
+--
+
+INSERT INTO `vehicle_owner` (`customer_id`, `vehicle_id`) VALUES
+(1, 1),
+(1, 2),
+(2, 8);
 
 -- --------------------------------------------------------
 
@@ -354,16 +347,17 @@ CREATE TABLE IF NOT EXISTS `vehicle_problem` (
   `actual_cost` int(11) NOT NULL,
   PRIMARY KEY (`problem_id`) USING BTREE,
   KEY `FK_PURCHASE_ID` (`purchase_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle_problem`
 --
 
 INSERT INTO `vehicle_problem` (`problem_id`, `description`, `purchase_id`, `estimated_cost`, `actual_cost`) VALUES
-(1, 'COMPLETE TRASH', 2, 0, 1000000),
-(2, 'COMPLETE TRASH', 1, 0, 1000000),
-(3, 'No Engine', 2, 100, 20);
+(5, 'Flat Tire', 6, 20, 90),
+(6, 'No Windshield', 7, 400, 350),
+(7, '', 8, 0, 0),
+(8, 'Timing belt shot', 9, 200, 200);
 
 -- --------------------------------------------------------
 
@@ -376,7 +370,7 @@ CREATE TABLE IF NOT EXISTS `warranty` (
   `vehicle_id` int(11) DEFAULT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `customer_id` int(11) DEFAULT NULL,
-  `warranty_id` int(11) NOT NULL,
+  `warranty_id` int(11) NOT NULL AUTO_INCREMENT,
   `sale_date` date NOT NULL,
   `total_cost` decimal(10,0) NOT NULL,
   `monthly_cost` decimal(10,0) NOT NULL,
@@ -384,33 +378,14 @@ CREATE TABLE IF NOT EXISTS `warranty` (
   KEY `FK_VEHICLE_ID` (`vehicle_id`),
   KEY `FK_EMP_ID` (`employee_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `warranty`
 --
 
 INSERT INTO `warranty` (`vehicle_id`, `employee_id`, `customer_id`, `warranty_id`, `sale_date`, `total_cost`, `monthly_cost`) VALUES
-(49, 68, 40, 0, '2011-12-25', '83', '72'),
-(47, 61, 30, 1, '2000-05-12', '88', '65'),
-(14, 6, 96, 2, '2011-01-06', '58', '10'),
-(61, 58, 77, 3, '2017-08-27', '99', '58'),
-(98, 27, 12, 4, '2001-05-24', '56', '79'),
-(61, 73, 57, 5, '2010-01-03', '73', '50'),
-(5, 22, 88, 6, '2006-01-25', '99', '91'),
-(46, 53, 47, 7, '2004-10-11', '29', '21'),
-(4, 46, 41, 8, '2005-08-06', '76', '13'),
-(30, 73, 85, 9, '2014-12-27', '94', '99'),
-(90, 87, 55, 10, '2001-03-26', '34', '18'),
-(11, 71, 21, 11, '2004-05-11', '90', '51'),
-(62, 93, 94, 12, '2016-05-06', '46', '32'),
-(82, 82, 23, 13, '2006-03-08', '61', '95'),
-(0, 46, 84, 14, '2012-12-25', '50', '65'),
-(67, 89, 69, 15, '2014-03-08', '71', '80'),
-(32, 54, 0, 16, '2005-07-25', '94', '87'),
-(73, 69, 53, 17, '2008-06-08', '10', '90'),
-(57, 40, 8, 18, '2011-10-23', '7', '86'),
-(5, 56, 69, 19, '2012-03-23', '45', '90');
+(8, 5, 2, 1, '2018-04-10', '1000', '100');
 
 -- --------------------------------------------------------
 
@@ -420,7 +395,7 @@ INSERT INTO `warranty` (`vehicle_id`, `employee_id`, `customer_id`, `warranty_id
 
 DROP TABLE IF EXISTS `warranty_item`;
 CREATE TABLE IF NOT EXISTS `warranty_item` (
-  `item_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL AUTO_INCREMENT,
   `warranty_id` int(11) NOT NULL,
   `item_covered` char(20) NOT NULL,
   `start_date` date NOT NULL,
@@ -429,33 +404,14 @@ CREATE TABLE IF NOT EXISTS `warranty_item` (
   `deductible` decimal(10,0) NOT NULL,
   PRIMARY KEY (`item_id`),
   KEY `FK_WARRANTY_ID` (`warranty_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `warranty_item`
 --
 
 INSERT INTO `warranty_item` (`item_id`, `warranty_id`, `item_covered`, `start_date`, `length`, `cost`, `deductible`) VALUES
-(0, 38, 'THING', '2005-10-14', 25, '44', '93'),
-(1, 22, 'THING', '2009-10-13', 6, '37', '28'),
-(2, 95, 'THING', '2005-10-08', 5, '63', '45'),
-(3, 21, 'THING', '2011-01-08', 11, '38', '28'),
-(4, 94, 'THING', '2009-05-06', 29, '75', '91'),
-(5, 97, 'THING', '2002-08-16', 25, '20', '5'),
-(6, 2, 'THING', '2008-05-05', 12, '42', '46'),
-(7, 86, 'THING', '2009-03-10', 6, '20', '6'),
-(8, 9, 'THING', '2013-03-19', 1, '14', '13'),
-(9, 16, 'THING', '2002-12-27', 16, '57', '6'),
-(10, 27, 'THING', '2001-03-12', 14, '68', '25'),
-(11, 7, 'THING', '2007-08-09', 14, '82', '77'),
-(12, 58, 'THING', '2006-03-26', 26, '86', '19'),
-(13, 46, 'THING', '2017-03-29', 29, '83', '66'),
-(14, 52, 'THING', '2013-01-09', 19, '7', '72'),
-(15, 41, 'THING', '2002-06-21', 12, '7', '27'),
-(16, 39, 'THING', '2014-08-23', 9, '41', '97'),
-(17, 73, 'THING', '2010-03-09', 4, '34', '38'),
-(18, 37, 'THING', '2005-07-16', 14, '63', '98'),
-(19, 84, 'THING', '2017-12-27', 18, '75', '22');
+(1, 1, 'Tires', '2018-04-09', 24, '1200', '1200');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
