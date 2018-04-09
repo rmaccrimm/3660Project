@@ -66,9 +66,6 @@
                     <label for="location">Location</label>
                     <input type="text" name="location" id="location" required>
 
-                    <label for="seller_dealer">Seller/Dealer Name</label>
-                    <input type="text" name="seller_dealer" id="seller_dealer" required>
-
                     <p>Was car purchased at auction?</p>
                     <div id="auction_radios">
                         <input type="radio" checked="checked" name="auction" id="auction_yes" value="1" required>

@@ -12,23 +12,69 @@ if($_SERVER['REQUEST_METHOD'] != "POST") {
     die("Please use POST method");
 }
 
+$car_values = array();
+$car_values['make'] = db_quote($_POST['vehicle_make']);
+$car_values['exterior'] = db_quote($_POST['exterior_color']);
+$car_values['interior'] = db_quote($_POST['interior_color']);
+$car_values['style'] = db_quote($_POST['style']);
+$car_values['model'] = db_quote($_POST['vehicle_model']);
+$car_values['miles'] = db_quote($_POST['vehicle_miles']);
+$car_values['book_price'] = db_quote($_POST['vehicle_book_price']);
+$car_values['price_paid'] = db_quote($_POST['vehicle_price_paid']);
+$car_values['condition'] = db_quote($_POST['vehicle_condition']);
+$car_values['year'] = db_quote($_POST['vehicle_year']);
 
-$id = db_quote($_POST['employee_id']);
-$date = db_quote($_POST['date']);
-$location = db_quote($_POST['location']);
-$seller_dealer = db_quote($_POST['seller_dealer']);
-$auction = db_quote($_POST['auction']);
-$make = db_quote($_POST['vehicle_make']);
-$exterior = db_quote($_POST['exterior_color']);
-$interior = db_quote($_POST['interior_color']);
-$model = db_quote($_POST['vehicle_model']);
-$miles = db_quote($_POST['vehicle_miles']);
-$book_price = db_quote($_POST['vehicle_book_price']);
-$price_paid = db_quote($_POST['vehicle_price_paid']);
-$year = db_quote($_POST['vehicle_year']);
-$condition = db_quote($_POST['vehicle_condition']);
+$vehicle_id = make_car_entry($car_values);
 
-$problems = find_car_problems($_POST);
+if (!$vehicle_id) {
+    die("Could not make new car, quitting...");
+}
+
+$sale_values = array();
+$sale_values['employee_id'] = db_quote($_POST['employee_id']);
+$sale_values['date'] = db_quote($_POST['date']);
+$sale_values['location'] = db_quote($_POST['location']);
+$sale_values['auction'] = db_quote($_POST['auction']);
+
+$purchase_id = make_purchase_entry($sale_values, $vehicle_id);
+
+make_problem_entries($purchase_id);
+
+function make_purchase_entry($inputs, $vehicle_id) {
+    /*
+     * Create a row in the purchase table
+     */
+    $sql = ("INSERT INTO purchase" .
+        "(date, location, auction, employee_id, vehicle_id)" .
+        "VALUES({$inputs['date']}, {$inputs['location']}, {$inputs['auction']}, {$inputs['employee_id']}, {$vehicle_id})");
+
+    db_query($sql);
+    return db_last_insert();
+}
+
+function make_problem_entries($purchase_id) {
+    /*
+     * Create as many rows in vehicle_problem as there are problems
+     */
+    $problems = find_car_problems($_POST);
+    foreach($problems as $problem) {
+        $sql = ("INSERT INTO vehicle_problem".
+            "(description, purchase_id, estimated_cost, actual_cost)".
+            "VALUES ({$problem['description']}, {$purchase_id}, {$problem['estimated']}, {$problem['actual']})");
+        db_query($sql);
+    }
+}
+
+function make_car_entry($inputs) {
+    /*
+     * Create a row in the vehicle table
+     */
+    $sql = ("INSERT INTO vehicle " .
+        "(miles, vehicle_condition, book_price, sale_price, style, exterior_color, interior_color, make, model, year)" .
+        "VALUES ({$inputs['miles']}, {$inputs['condition']}, {$inputs['book_price']}, {$inputs['price_paid']}, {$inputs['style']},{$inputs['exterior']}, {$inputs['interior']}, {$inputs['make']}, {$inputs['model']}, {$inputs['year']})");
+    db_query($sql);
+    return db_last_insert();
+}
 
 function find_car_problems($array) {
     /*
@@ -53,11 +99,11 @@ function find_car_problems($array) {
             $is_actual = preg_match('/actual_cost_.$/', $key);
 
             if($is_description) {
-                $problem['description'] = $value;
+                $problem['description'] = db_quote($value);
             } elseif($is_estimated) {
-                $problem['estimated'] = $value;
+                $problem['estimated'] = db_quote($value);
             } else {
-                $problem['actual'] = $value;
+                $problem['actual'] = db_quote($value);
             }
 
             if(count($problem) == 3) {
@@ -69,12 +115,3 @@ function find_car_problems($array) {
     }
     return $problems;
 }
-
-// for each value that starts with problem_
-//    create array of values that endwith _0, _1, _2,...
-//    make new database entry for each thing in array
-
-//vehicle needs to be made first, as well as customer
-// then problems need to be made
-//$sql = "INSERT into vehicle (miles, vehicle_condition, book_price, sales_price, style, exterior_color, interior_color, make, model, year)";
-
