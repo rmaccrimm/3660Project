@@ -1,8 +1,6 @@
 $(function() {
 
     let employee_id = $("#employee_id");
-    let customer_id = $("#customer_id");
-
     // Populate employee id dropdown on car sale form
     $.ajax({
         url: "../php/purchase_form_employees.php",
@@ -12,6 +10,7 @@ $(function() {
             employee_id.html(response);
         }
     });
+    let customer_id = $("#customer_id");
 
     // Populate customer id dropdown on car sale form
     $.ajax({
@@ -20,6 +19,17 @@ $(function() {
         success: function (response) {
             // Replace div content with response
             customer_id.html(response);
+        }
+    });
+
+    let car_id = $("#car_id");
+
+    $.ajax({
+        url: "../php/sale_form_cars.php",
+        type: "post",
+        success: function (response) {
+            // Replace div content with response
+            car_id.html(response);
         }
     });
 

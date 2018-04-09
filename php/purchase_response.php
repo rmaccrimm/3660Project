@@ -1,6 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../style/basic_style.css">
+    <title>Car Purchase</title>
 </head>
 </html>
 <body>
@@ -126,7 +127,7 @@ function find_car_problems($array) {
 }?>
 
 <?php if ($vehicle_id and $purchase_id and $problem_id):?>
-    <p>Success! To go back, click <a href="purchase_form.php" title="Go back to customer form">here</a></p>
+    <p>Success! To go back, click <a href="purchase_form.php" title="Go back to purchase form">here</a></p>
 <?php else:?>
     <p>Failure! To go back, click <a href="purchase_form.php" title="Go back to purchase form">here</a></p>
 <?php endif;?>

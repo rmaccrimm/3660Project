@@ -8,7 +8,7 @@
 
 <html lang="en-US">
 <head>
-    <title>Reports</title>
+    <title>Car Sale</title>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/sale_form.js"></script>
@@ -55,18 +55,24 @@
             <!-- Going for a two column form here -->
             <div class="form_row">
                 <div class="form_col">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date" required>
+
                     <label for="employee_id">Employee Id</label>
-                    <select name="employee_id" id="employee_id">
+                    <select name="employee_id" id="employee_id" required>
                         <!-- jQuery employee 1, 2, 3, ... -->
                     </select>
 
                     <label for="customer_id">Customer Id</label>
-                    <select name="customer_id" id="customer_id">
+                    <select name="customer_id" id="customer_id" required>
                         <!-- jQuery customer 1, 2, 3, ... -->
                     </select>
 
-                    <label for="date">Date</label>
-                    <input type="date" name="date" id="date">
+                    <label for="car_id">Car Id</label>
+                    <select name="car_id" id="car_id" required>
+                        <!-- jQuery car 1, 2, 3, ... -->
+                    </select>
+
                 </div>
                 <div class="form_col">
                     <label for="total_due">$ Total Due</label>
@@ -78,10 +84,10 @@
                     <label for="finance_amount">% Finance Amount</label>
                     <input type="number" min="0" value="0" name="finance_amount" id="finance_amount" required>
                 </div>
-                <div id="all_employment_history">
-                    <button type="button" id="new_employment_history">+ Employment history</button>
-                    <!-- jquery employment history -->
-                </div>
+            </div>
+            <div id="all_employment_history">
+                <button type="button" id="new_employment_history">+ Employment history</button>
+                <!-- jquery employment history -->
             </div>
             <!-- submit button not in either column -->
             <input id="form_submit" type="submit" value="Submit">
