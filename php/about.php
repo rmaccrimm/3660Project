@@ -46,7 +46,7 @@
 
         <h3>Team Members</h3>
         <ul>
-            <li><em>Ethan-the-one-they-call-brian-but-also-ethan Toley </em><small><a href="https://github.com/eatoly">GitHub</a></small></li>
+            <li><em>Ethan-the-one-they-call-brian-but-also-ethan Toly </em><small><a href="https://github.com/eatoly">GitHub</a></small></li>
             <li><em>Rod-the-god-erick MacCrimmmmon </em><small><a href="https://github.com/rmaccrimm">GitHub</a></small></li>
             <li>and Gideon Richter <small><a href="https://github.com/Godron629">GitHub</a></small></li>
         </ul>
