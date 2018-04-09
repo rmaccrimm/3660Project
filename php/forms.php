@@ -73,7 +73,7 @@
                     for various car components.</td>
             </tr>
             <tr>
-                <td><a href="#payment_form.php" title="Payment Form">Payment</a></td>
+                <td><a href="payment_form.php" title="Payment Form">Payment</a></td>
                 <td>Form to fill out when a customer makes a payment on their car.</td>
             </tr>
         </table>
