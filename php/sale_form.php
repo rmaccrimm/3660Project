@@ -2,15 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: Gideon
- * Date: 3/31/2018
- * Time: 1:12 PM
- */ ?>
+ * Date: 4/8/2018
+ * Time: 7:52 PM
+ */?>
 
 <html lang="en-US">
 <head>
-    <title>Westside Auto&trade; Database System</title>
+    <title>Reports</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/basic_style.css">
+    <link rel="stylesheet" href="../style/forms_style.css">
+    <link rel="stylesheet" href="../style/entry_form_style.css">
 </head>
 <body>
 
@@ -20,7 +22,7 @@
 
     <!-- Top of page -->
     <div id="logo_and_title">
-        <a href="index.php"><img id="logo" alt="Westside Auto Logo" title="Home" src="../img/truck_logo.png"></a>
+        <a title="Home" href="index.php"><img id="logo" alt="Westside Auto Logo" src="../img/truck_logo.png"></a>
         <h1 id="title">Westside Auto&trade; Database System</h1>
     </div>
     <!-- /Top of page -->
@@ -29,8 +31,8 @@
     <!-- Navigation bar -->
     <div id="nav_bar">
         <ul>
-            <li><a class="active" href="index.php" title="Home">Home</a></li>
-            <li><a href="forms.php" title="Forms">Forms</a></li>
+            <li><a href="index.php" title="Home">Home</a></li>
+            <li><a class="active" href="forms.php" title="Forms">Forms</a></li>
             <li><a href="reports.php" title="Reports">Reports</a></li>
             <li><a href="#about.php" title="About">About</a></li>
         </ul>
@@ -39,21 +41,21 @@
 
 
     <!-- Page name -->
-    <h1 id="page_name">Home</h1>
+    <h1 id="page_name">Car Sale</h1>
     <!-- /Page name -->
 
 
     <!-- Content -->
     <div id="page_content">
-        <p>Westside Auto Inc. is a fictional local used-car dealer located in West Lethbridge.</p>
-        <p>If you are:</p>
-        <ul>
-            <li>buying a car - <a href="purchase_form.php" title="Buy Form">click here</a></li>
-            <li>selling a car - <a href="sale_form.php" title="Sale Form">click here</a></li>
-            <li>filing a warranty - <a href="#warranty_form.php" title="Warranty Form">click here</a></li>
-            <li>filing a payment - <a href="#payment_form.php" title="Payment Form">click here</a></li>
-            <li>looking for reports - <a href="reports.php" title="Report">click here</a></li>
-        </ul>
+        <p></p>
+        <form class="entry_form" id="purchase_car_form" action="purchase_response.php" method="POST">
+            <!-- Going for a two column form here -->
+            <div class="form_row">
+
+            </div>
+            <!-- submit button not in either column -->
+            <input id="form_submit" type="submit" value="Submit">
+        </form>
     </div>
     <!-- /Content -->
 
@@ -71,3 +73,4 @@
 
 </body>
 </html>
+

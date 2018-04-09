@@ -50,7 +50,6 @@
 
     <!-- Content -->
     <div id="page_content">
-        <p></p>
         <form class="entry_form" id="purchase_car_form" action="purchase_response.php" method="POST">
             <!-- Going for a two column form here -->
             <div class="form_row">
