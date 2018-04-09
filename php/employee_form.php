@@ -9,7 +9,7 @@
 
 <html lang="en-US">
 <head>
-    <title>Reports</title>
+    <title>Employee Form</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/basic_style.css">
     <link rel="stylesheet" href="../style/forms_style.css">
@@ -42,7 +42,7 @@
 
 
     <!-- Page name -->
-    <h1 id="page_name">New employee</h1>
+    <h1 id="page_name">New Employee</h1>
     <!-- /Page name -->
 
 

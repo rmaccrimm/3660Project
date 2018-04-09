@@ -23,7 +23,7 @@
 
 include "database_functions.php";
 
-// This page should be usable unless posted to
+// This page shouldn't be usable unless posted to
 if($_SERVER["REQUEST_METHOD"] != "POST") {
     die("Please use POST method");
 }
@@ -39,11 +39,10 @@ $zip = db_quote($_POST['employee_zip']);
 $gender = db_quote($_POST['employee_gender']);
 $job = db_quote($_POST['employee_position']);
 $dob = db_quote($_POST['employee_dob']);
-if (isset($_POST['employee_commission'])) {
+if ($_POST['employee_commission'] != "") {
     $commission = db_quote($_POST['employee_commission']);
-}
-else {
-    $commission = 'NULL';
+} else {
+    $commission = "NULL";
 }
 
 

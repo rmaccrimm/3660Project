@@ -44,7 +44,14 @@ function make_employment_entry($input) {
         db_query("INSERT INTO employment_history (customer_id, employer, title, supervisor, phone, address, start)" .
             "VALUES ({$cust_id}, {$name}, {$title}, {$supervisor}, {$phone}, {$address}, {$start})");
     }
-    return db_last_insert();
+
+    $employment_id = db_last_insert();
+    if ($employment_id == 0) {
+        // if there is no history, this will return 0 (false) which is not correct
+        return 1;
+    } else {
+        return $employment_id;
+    }
 }
 
 function make_owner_entry($input) {
