@@ -18,7 +18,11 @@ function populate_employee_id_dropdown() {
      *   <option value="1">(1) Gideon Richter</option>
      * </select>
      */
-    $all_employees = db_select("SELECT * from employee");
+    $query =
+        'SELECT *
+         FROM employee, employee_job 
+         WHERE employee.job_id=employee_job.job_id AND employee_job.job_title=\'buyer\'';
+    $all_employees = db_select($query);
 
     foreach($all_employees as $employee):
         $id = $employee['employee_id'];
