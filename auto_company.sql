@@ -442,7 +442,7 @@ DROP TABLE IF EXISTS `vehicle`;
 CREATE TABLE IF NOT EXISTS `vehicle` (
   `vehicle_id` int(11) NOT NULL,
   `miles` int(11) NOT NULL,
-  `vehicle_condition` int(11) NOT NULL,
+  `vehicle_condition` char(10) NOT NULL,
   `book_price` int(11) NOT NULL,
   `sale_price` int(11) NOT NULL,
   `style` char(10) NOT NULL,
