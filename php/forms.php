@@ -67,7 +67,7 @@
                     and numbered. It is company policy to avoid cars in need of major repairs.</td>
             </tr>
             <tr>
-                <td><a href="#sell_form.php" title="Sell Car">Sell Car</a></td>
+                <td><a href="sale_form.php" title="Sell Car">Sell Car</a></td>
                 <td>A <em>salesperson</em> helps a customer select a car and negotiates the price.
                     When the customer decides to proceed, the salesperson needs to fill out this form.</td>
             </tr>

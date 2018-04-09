@@ -49,10 +49,10 @@
         <p>If you are:</p>
         <ul>
             <li>buying a car - <a href="purchase_form.php" title="Buy Form">click here</a></li>
-            <li>selling a car - <a href="#sell_form.php" title="Buy Form">click here</a></li>
-            <li>filing a warranty - <a href="#warranty_form.php" title="Buy Form">click here</a></li>
-            <li>filing a payment - <a href="#payment_form.php" title="Buy Form">click here</a></li>
-            <li>looking for reports - <a href="reports.php" title="Buy Form">click here</a></li>
+            <li>selling a car - <a href="sale_form.php" title="Sale Form">click here</a></li>
+            <li>filing a warranty - <a href="#warranty_form.php" title="Warranty Form">click here</a></li>
+            <li>filing a payment - <a href="#payment_form.php" title="Payment Form">click here</a></li>
+            <li>looking for reports - <a href="reports.php" title="Report">click here</a></li>
         </ul>
     </div>
     <!-- /Content -->

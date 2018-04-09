@@ -8,7 +8,7 @@
 
 <html lang="en-US">
 <head>
-    <title>Reports</title>
+    <title>Car Purchase</title>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/purchase_form.js"></script>
@@ -50,7 +50,6 @@
 
     <!-- Content -->
     <div id="page_content">
-        <p></p>
         <form class="entry_form" id="purchase_car_form" action="purchase_response.php" method="POST">
             <!-- Going for a two column form here -->
             <div class="form_row">
