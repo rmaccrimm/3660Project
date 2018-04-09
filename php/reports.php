@@ -34,7 +34,7 @@
             <li><a href="index.php" title="Home">Home</a></li>
             <li><a href="forms.php" title="Forms">Forms</a></li>
             <li><a class="active" href="reports.php" title="Reports">Reports</a></li>
-            <li><a href="#about.php" title="About">About</a></li>
+            <li><a href="about.php" title="About">About</a></li>
         </ul>
     </div>
     <!-- /Navigation bar -->
@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td><a href="reports/customer_report.php" title="Customer Info">Customer Info</a></td>
-                <td>Customer contact, verhicle, payment, and warranty information.</td>
+                <td>Customer contact, vehicle, payment, and warranty information.</td>
             </tr>
             <tr>
                 <td><a href="reports/employee_report.php" title="Employee Info">Employee Info</a></td>

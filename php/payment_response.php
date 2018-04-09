@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] != "POST") {
             <li><a href="index.php" title="Home">Home</a></li>
             <li><a class="active" href="forms.php" title="Forms">Forms</a></li>
             <li><a href="reports.php" title="Reports">Reports</a></li>
-            <li><a href="#about.php" title="About">About</a></li>
+            <li><a href="about.php" title="About">About</a></li>
         </ul>
     </div>
     <!-- /Navigation bar -->
