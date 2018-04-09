@@ -3,7 +3,7 @@ $(function() {
     let employee_id = $("#employee_id");
     // Populate employee id dropdown on car sale form
     $.ajax({
-        url: "../php/purchase_form_employees.php",
+        url: "../php/sale_form_employees.php",
         type: "post",
         success: function (response) {
             // Replace div content with response
