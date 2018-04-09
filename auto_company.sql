@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2018 at 01:55 AM
+-- Generation Time: Apr 09, 2018 at 02:58 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -59,40 +59,29 @@ INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `ci
 
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE IF NOT EXISTS `employee` (
-  `employee_id` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL AUTO_INCREMENT,
   `last_name` char(50) NOT NULL,
   `first_name` char(50) NOT NULL,
   `phone` char(50) NOT NULL,
   `job_id` int(11) NOT NULL,
+  `address` char(50) NOT NULL,
+  `city` char(50) NOT NULL,
+  `state` char(50) NOT NULL,
+  `zip_code` char(50) NOT NULL,
+  `gender` char(50) NOT NULL,
+  `date_of_birth` char(20) NOT NULL,
+  `commission` float DEFAULT NULL,
   PRIMARY KEY (`employee_id`),
   KEY `FK_JOB_ID` (`job_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`employee_id`, `last_name`, `first_name`, `phone`, `job_id`) VALUES
-(0, 'BODMAN', 'CAROLANN', '705817129', 2),
-(1, 'PLONA', 'ROBBI', '311724291', 9),
-(2, 'FORNER', 'DIANNA', '342925138', 3),
-(3, 'STANWICK', 'CANDICE', '373487164', 1),
-(4, 'TAJIRI', 'THAD', '356356701', 5),
-(5, 'LISSY', 'LEDA', '961793052', 4),
-(6, 'ZOBEL', 'KRISTIN', '105765650', 3),
-(7, 'LANOIS', 'ALBA', '103266285', 5),
-(8, 'NOVOSEL', 'AHMAD', '915063306', 4),
-(9, 'SINKA', 'LATRISHA', '205826931', 2),
-(10, 'AUTRY', 'SOMMER', '937688417', 0),
-(11, 'MARQUES', 'ELENA', '781673139', 5),
-(12, 'CARRIZALES', 'MARIEL', '698506780', 9),
-(13, 'ZURN', 'LARRY', '245457572', 6),
-(14, 'MORTELLARO', 'DYAN', '479380906', 5),
-(15, 'RAYMOND', 'ANGLA', '855363906', 0),
-(16, 'HUDEK', 'MATHILDA', '951804929', 9),
-(17, 'RIPPER', 'KIRSTEN', '558731713', 9),
-(18, 'SCHERTZ', 'GILLIAN', '386598090', 3),
-(19, 'CAMILO', 'ORLANDO', '608961869', 3);
+INSERT INTO `employee` (`employee_id`, `last_name`, `first_name`, `phone`, `job_id`, `address`, `city`, `state`, `zip_code`, `gender`, `date_of_birth`, `commission`) VALUES
+(2, 'Johnathonson', 'John', '123-123123-232', 1, 'B', 'B', 'CA', '123123', 'male', '2019-12-12', NULL),
+(3, 'Bobobobob', 'Bob', '1-1-1-1-1-1-1-', 2, 'A', 'A', 'DE', '123123', 'female', '0012-12-12', 10);
 
 -- --------------------------------------------------------
 
@@ -307,47 +296,6 @@ INSERT INTO `sale` (`sale_id`, `employee_id`, `customer_id`, `date`, `total_due`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sales_comission`
---
-
-DROP TABLE IF EXISTS `sales_comission`;
-CREATE TABLE IF NOT EXISTS `sales_comission` (
-  `employee_id` int(11) DEFAULT NULL,
-  `comission_amount` float NOT NULL,
-  `commission_id` int(11) NOT NULL,
-  PRIMARY KEY (`commission_id`),
-  KEY `FK_EMP_ID` (`employee_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sales_comission`
---
-
-INSERT INTO `sales_comission` (`employee_id`, `comission_amount`, `commission_id`) VALUES
-(23, 731.86, 0),
-(33, 1756.82, 1),
-(83, 1302.17, 2),
-(54, 1968.77, 3),
-(88, 1929.28, 4),
-(33, 1676.21, 5),
-(85, 447.04, 6),
-(52, 1835.25, 7),
-(15, 1865.22, 8),
-(15, 1501.49, 9),
-(45, 1958.94, 10),
-(25, 171.58, 11),
-(19, 1256.95, 12),
-(98, 444.03, 13),
-(18, 1529.47, 14),
-(5, 765.84, 15),
-(58, 956.66, 16),
-(58, 616.04, 17),
-(92, 1260.67, 18),
-(69, 1190.25, 19);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vehicle`
 --
 
@@ -531,16 +479,6 @@ INSERT INTO `warranty_item` (`item_id`, `warranty_id`, `item_covered`, `start_da
 (17, 73, 'THING', '2010-03-09', 4, '34', '38'),
 (18, 37, 'THING', '2005-07-16', 14, '63', '98'),
 (19, 84, 'THING', '2017-12-27', 18, '75', '22');
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `employee`
---
-ALTER TABLE `employee`
-  ADD CONSTRAINT `job_id_constraint` FOREIGN KEY (`job_id`) REFERENCES `employee_job` (`job_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
