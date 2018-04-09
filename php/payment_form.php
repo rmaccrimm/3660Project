@@ -69,7 +69,7 @@
                     <input type="number" value="0.00" min="0" step="0.01" name="payment_amount" id="payment_amount" required>
 
                     <label for="bank_account_number">Bank Account Number</label>
-                    <input type="number" value="0" min="0" step="1" name="bank_account_number" id="bank_account_number" required>
+                    <input type="number" value="0" min="0" max="99999" placeholder="12345" step="1" name="bank_account_number" id="bank_account_number" required>
 
                     <input type="submit", value="Submit"/>
                 </div>
