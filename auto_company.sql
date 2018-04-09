@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 08, 2018 at 09:40 PM
+-- Generation Time: Apr 09, 2018 at 01:55 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `customer`;
 CREATE TABLE IF NOT EXISTS `customer` (
-  `customer_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL AUTO_INCREMENT,
   `last_name` char(50) NOT NULL,
   `first_name` char(50) NOT NULL,
   `address` char(50) NOT NULL,
@@ -39,64 +39,17 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `zip_code` char(50) NOT NULL,
   `phone` char(50) NOT NULL,
   `date_of_birth` date NOT NULL,
+  `gender` char(20) NOT NULL,
+  `tax_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`) VALUES
-(0, 'SALZ', 'LAURENCE', '832 Croton Street', 'Salinas', 'Alabama', 'D0S3U3', '(826)-615-9358', '1950-11-07'),
-(1, 'ERNSPIKER', 'ARACELI', '790 La Mirada Street', 'Boulder', 'New York', 'U1T1F7', '(475)-211-2149', '1961-12-18'),
-(2, 'PIERCEFIELD', 'MARYLIN', '535 Shorrold Street', 'Naperville', 'Michigan', 'U1A9I4', '(057)-008-7465', '1943-01-17'),
-(3, 'MARKUS', 'DEBORA', '342 West San Carlos Street', 'Duluth', 'Indiana', 'G1P5C3', '(991)-799-5698', '1944-05-29'),
-(4, 'ALTOBELLI', 'BRYCE', '555 N Ludlam Way', 'Lubbock', 'Wyomin', 'X5K6K0', '(413)-168-8523', '1980-06-10'),
-(5, 'LEVINGS', 'SUZIE', '351 Millridge Boulevard', 'Garden Grove', 'Arizona', 'Q9P9A3', '(755)-504-7589', '1977-03-27'),
-(6, 'RAMGEL', 'ANTONE', '33 Deer Path Way', 'Sunnyvale', 'New York', 'T6F3K8', '(649)-110-4497', '1953-10-26'),
-(7, 'PRASSER', 'FLORENCIA', '181 Dean Lesher Street', 'Dayton', 'Utah', 'Q5L5P1', '(560)-793-5112', '1998-03-15'),
-(8, 'DEMRY', 'MARRY', '655 Gerome Drive', 'Ocala', 'Missouri', 'D4Y5H7', '(415)-097-0710', '1972-10-13'),
-(9, 'RAEHL', 'NANA', '332 Plyers Mill Drive', 'Cape Coral', 'Ohio', 'K5M8K5', '(087)-522-3561', '1980-07-11'),
-(10, 'VISKER', 'CRISTY', '218 Hearn Drive', 'Richmond County', 'Kansas', 'P5W5G1', '(206)-953-3050', '1972-01-12'),
-(11, 'OPPENHEIMER', 'LEONTINE', '50 Porto Marino Boulevard', 'Canton', 'Mississippi', 'P6X3S1', '(951)-673-4441', '1987-08-01'),
-(12, 'CORDONNIER', 'ROSEANNA', '156 Ferol Way', 'Beaumont', 'Ohio', 'S0U3G5', '(187)-206-4830', '1983-08-14'),
-(13, 'MERKSAMER', 'HANG', '86 Kingwell Boulevard', 'Portsmouth', 'Montana', 'E7T9F3', '(090)-660-2665', '1997-08-17'),
-(14, 'QUINOES', 'DIANA', '209 Pleasant Colony Avenue', 'Sebastian', 'Oregon', 'S2Y4P6', '(406)-837-2000', '1957-11-23'),
-(15, 'CLARENCE', 'CRISTEN', '674 Tunnell Boulevard', 'Virginia Beach', 'Louisiana', 'B2G9P3', '(437)-908-4336', '1976-05-26'),
-(16, 'ZHENG', 'TAMEKA', '522 Darvell Way', 'Green Bay', 'Louisiana', 'C4X4O9', '(351)-101-5710', '1964-07-21'),
-(17, 'VARAS', 'BRINDA', '157 N Emerson Drive', 'Miramar', 'Texas', 'U5X3H9', '(411)-598-6742', '1956-03-14'),
-(18, 'LEVERETT', 'TRANG', '260 Ghyll Avenue', 'Henderson', 'Kentucky', 'M5J2E0', '(790)-103-7823', '1950-04-13'),
-(19, 'GUICE', 'ROBIN', '276 Okehurst Avenue', 'Billings', 'Texas', 'J3W2R6', '(431)-411-1283', '1960-01-26'),
-(20, 'URPS', 'LUZ', '480 Ourisman Drive', 'Olympia', 'Arkansas', 'F0T4Q9', '(419)-418-0508', '1964-06-19'),
-(21, 'LOCUST', 'KIZZIE', '87 Maynestone Avenue', 'Arvada', 'Alabama', 'U1W2H5', '(120)-476-9501', '1938-09-15'),
-(22, 'WINARSKI', 'HILARIO', '390 Mima Street', 'Durham', 'Utah', 'O6G1O5', '(199)-164-3411', '1968-04-25'),
-(23, 'FINNEL', 'GABRIELLA', '103 Cornwall Street', 'Panama City', 'Mississippi', 'F3S6Y9', '(171)-062-9731', '1942-11-29'),
-(24, 'LASHUA', 'HIROKO', '692 Gregg Road', 'Orem', 'New Hampshire', 'O5U7P6', '(375)-688-4291', '1942-03-06'),
-(25, 'LOWLER', 'VERDELL', '649 Stedham Road', 'North Charleston', 'Virginia', 'L6I6N9', '(955)-921-9750', '1936-05-08'),
-(26, 'KOVALCIK', 'DEADRA', '638 Chubbs Brook Drive', 'Hesperia', 'New Jersey', 'L2J8Z4', '(748)-932-5012', '1963-11-19'),
-(27, 'MUNDAY', 'DEBRAH', '867 South E Drive', 'Aurora', 'Kansas', 'K9L9K5', '(773)-025-2366', '1982-05-12'),
-(28, 'ZAKARIAN', 'DOYLE', '125 Kyalite Avenue', 'Orem', 'Vermont', 'B6Z8O5', '(960)-100-6929', '1964-04-09'),
-(29, 'DRACH', 'STANLEY', '620 Silk MIll Way', 'Akron', 'Connecticut', 'O0T0X1', '(536)-741-0470', '1938-08-03'),
-(30, 'RAYBUCK', 'ISSAC', '361 Siskiyou Drive', 'Clarke County', 'Louisiana', 'R4C7J6', '(399)-742-0424', '1956-03-26'),
-(31, 'CIERLEY', 'HERMINA', '374 Bellevale Avenue', 'Bellevue', 'Oklahoma', 'M6E0M8', '(565)-335-5736', '1937-11-04'),
-(32, 'HORNSTEIN', 'GRAYCE', '160 Buntingford Drive', 'Ogden', 'Arizona', 'C2W9L6', '(985)-654-4560', '1930-05-08'),
-(33, 'VOLO', 'SHARONDA', '609 Demetrius Boulevard', 'Waco', 'Michigan', 'U9W7Z8', '(873)-860-4835', '1999-10-11'),
-(34, 'CORNFIELD', 'YUK', '682 Flemish Drive', 'Glendale', 'Arkansas', 'O7Z3F0', '(587)-058-0676', '1948-03-12'),
-(35, 'NERIO', 'MINDY', '572 Quattro Way', 'Santa Rosa', 'Virginia', 'E0L7V0', '(514)-905-7394', '1986-08-04'),
-(36, 'SYRSTAD', 'MARCOS', '204 Saint Benedicts Road', 'Minneapolis', 'Arkansas', 'C0M6J8', '(550)-228-5443', '1984-06-19'),
-(37, 'DRESSMAN', 'MELIDA', '592 Pier Approach Street', 'Sebastian', 'Wisconsin', 'U4W7A6', '(227)-786-8127', '1957-04-17'),
-(38, 'GLIMPSE', 'SHAWN', '154 E Wheelock Drive', 'Saginaw', 'New York', 'R7T0C3', '(060)-545-0277', '1986-09-17'),
-(39, 'KOLKMAN', 'TOBIE', '302 Marble Fawn Boulevard', 'Trenton', 'Montana', 'T8E8V6', '(144)-388-7127', '1996-03-25'),
-(40, 'WRIGLEY', 'ROSEMARIE', '886 Fara Avenue', 'Marysville', 'Iowa', 'H2F3N6', '(264)-898-6673', '1942-12-05'),
-(41, 'FARQUHARSON', 'DENNISE', '173 Horseshoe Bend Drive', 'Hollywood', 'Texas', 'V0S1G0', '(764)-965-6946', '1978-06-23'),
-(42, 'KIES', 'ALDEN', '23 Darnel Street', 'Killeen', 'Oregon', 'G8U4H8', '(230)-061-6062', '1931-09-11'),
-(43, 'COOCH', 'SIMONA', '785 Lake Lawn Street', 'Fargo', 'Mississippi', 'W6A7E8', '(623)-405-5877', '1997-12-14'),
-(44, 'MALEKZADEH', 'EUGENIE', '657 Ensign Street', 'Eugene', 'Illinois', 'M0Q0E9', '(072)-818-8495', '1985-09-22'),
-(45, 'GUGLIELMO', 'CUC', '793 E Fulton Avenue', 'Harlingen', 'Arkansas', 'T0J8B4', '(392)-322-5011', '1967-03-29'),
-(46, 'OZGA', 'EMERSON', '951 St. Ives Avenue', 'Visalia', 'Delaware', 'C9K9J7', '(709)-662-4595', '1942-08-02'),
-(47, 'DIMERY', 'ERNA', '613 W Regan Boulevard', 'Palm Bay', 'California', 'J7H0V8', '(209)-818-7570', '1937-11-09'),
-(48, 'KABIGTING', 'SEBRINA', '464 Geranimo Road', 'Tacoma', 'Connecticut', 'E4L8K7', '(644)-298-3664', '1959-11-11'),
-(49, 'DEFRANCO', 'PHOEBE', '247 Asiatic Road', 'Madison', 'South Dakota', 'Z5X5W8', '(067)-783-5132', '1936-09-20');
+INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`, `gender`, `tax_id`) VALUES
+(1, 'TACO', 'FISH', 'sf', 'l;kj;', 'AL', 'TKJDFE', '3023123123123', '1980-02-12', 'male', 123123);
 
 -- --------------------------------------------------------
 
@@ -159,26 +112,8 @@ CREATE TABLE IF NOT EXISTS `employee_job` (
 --
 
 INSERT INTO `employee_job` (`job_id`, `job_title`) VALUES
-(0, 'JobTitle'),
-(1, 'JobTitle'),
-(2, 'JobTitle'),
-(3, 'JobTitle'),
-(4, 'JobTitle'),
-(5, 'JobTitle'),
-(6, 'JobTitle'),
-(7, 'JobTitle'),
-(8, 'JobTitle'),
-(9, 'JobTitle'),
-(10, 'JobTitle'),
-(11, 'JobTitle'),
-(12, 'JobTitle'),
-(13, 'JobTitle'),
-(14, 'JobTitle'),
-(15, 'JobTitle'),
-(16, 'JobTitle'),
-(17, 'JobTitle'),
-(18, 'JobTitle'),
-(19, 'JobTitle');
+(1, 'buyer'),
+(2, 'salesperson');
 
 -- --------------------------------------------------------
 
@@ -221,42 +156,38 @@ INSERT INTO `employment_history` (`customer_id`, `employer`, `title`, `superviso
 
 DROP TABLE IF EXISTS `payment`;
 CREATE TABLE IF NOT EXISTS `payment` (
-  `payment_id` int(11) NOT NULL,
+  `payment_id` int(11) NOT NULL AUTO_INCREMENT,
   `customer_id` int(11) DEFAULT NULL,
   `payment_date` date NOT NULL,
   `due_date` date NOT NULL,
-  `paid_date` date NOT NULL,
   `amount` float NOT NULL,
   `bank_account` int(11) NOT NULL,
   PRIMARY KEY (`payment_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `payment`
 --
 
-INSERT INTO `payment` (`payment_id`, `customer_id`, `payment_date`, `due_date`, `paid_date`, `amount`, `bank_account`) VALUES
-(0, 26, '2009-11-03', '2006-01-07', '2003-06-28', 1402.52, 487471090),
-(1, 49, '2001-05-05', '2010-02-06', '1999-10-18', 1288.14, 447038217),
-(2, 77, '2001-10-23', '2009-09-22', '2011-02-13', 32.55, 308438444),
-(3, 81, '2003-12-11', '2009-03-10', '2010-09-18', 600.48, 909165443),
-(4, 11, '2001-04-14', '1999-10-21', '2004-10-02', 1180.87, 645407887),
-(5, 39, '2001-04-14', '2000-11-23', '2000-04-03', 1937.18, 198344822),
-(6, 46, '2002-08-03', '2000-02-09', '2004-11-08', 1630.4, 528675053),
-(7, 15, '2012-05-13', '2001-05-18', '2005-10-25', 692.55, 152355052),
-(8, 27, '2015-10-16', '2004-10-14', '2010-04-05', 1504.3, 693789632),
-(9, 35, '2012-04-06', '2015-07-14', '2015-11-11', 1562.18, 477133409),
-(10, 53, '2011-02-28', '2002-05-13', '2013-11-01', 1563.98, 283254940),
-(11, 38, '2009-08-16', '2007-06-11', '2008-07-07', 1139.07, 156264714),
-(12, 40, '2000-07-26', '2006-06-08', '2017-06-05', 1793.22, 969030931),
-(13, 59, '2014-05-23', '2006-09-09', '2009-11-08', 237.45, 860036435),
-(14, 35, '2011-10-16', '2001-12-29', '2001-05-06', 931.38, 893235989),
-(15, 85, '2016-01-15', '2010-07-03', '1999-09-03', 1335, 880599904),
-(16, 50, '2004-09-24', '2002-08-05', '2006-11-01', 1782.64, 352411920),
-(17, 24, '2000-03-07', '2009-01-28', '2010-12-07', 736.53, 776629488),
-(18, 61, '2011-01-16', '2008-11-15', '2011-08-29', 739.31, 963645690),
-(19, 69, '2008-10-19', '2016-09-25', '2015-09-09', 1159.68, 456664596);
+INSERT INTO `payment` (`payment_id`, `customer_id`, `payment_date`, `due_date`, `amount`, `bank_account`) VALUES
+(1, 0, '2001-01-01', '2002-02-02', 123123, 2332),
+(2, 0, '1999-02-10', '1999-12-02', 500, 123123),
+(3, 0, '1999-02-10', '1999-02-01', 123123, 123123),
+(4, 14, '1999-12-11', '1998-01-01', 123.23, 234234),
+(5, 0, '2012-12-12', '2012-01-12', 2323.32, 123123),
+(6, 0, '2020-02-02', '2020-01-30', 400, 123),
+(7, 0, '2020-02-20', '2020-12-13', 321, 44),
+(8, 0, '2020-12-12', '2020-12-14', 123, 123),
+(9, 0, '2020-12-13', '2020-12-12', 123.32, 12314),
+(10, 0, '1212-12-12', '1212-12-11', 123, 123),
+(11, 0, '1212-12-11', '1212-12-12', 123, 123),
+(12, 0, '1212-12-11', '1212-12-12', 123, 123),
+(13, 0, '1212-12-11', '1212-12-01', 123, 123),
+(14, 0, '1212-12-11', '1212-12-22', 123, 123),
+(15, 1, '1212-12-12', '2000-12-12', 123123, 123123),
+(16, 1, '1212-12-12', '1213-12-12', 123123, 123123),
+(17, 1, '1212-12-12', '1211-12-12', 123123, 123123);
 
 -- --------------------------------------------------------
 
@@ -268,7 +199,7 @@ DROP TABLE IF EXISTS `payment_info`;
 CREATE TABLE IF NOT EXISTS `payment_info` (
   `tax_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `avg_days_late` int(11) NOT NULL,
+  `avg_days_late` float NOT NULL,
   `late_payments` int(11) NOT NULL,
   PRIMARY KEY (`tax_id`),
   KEY `FK_CUSTOMER_ID` (`customer_id`)
@@ -298,7 +229,8 @@ INSERT INTO `payment_info` (`tax_id`, `customer_id`, `avg_days_late`, `late_paym
 (16, 35, 20, 60),
 (17, 10, 90, 47),
 (18, 25, 82, 56),
-(19, 1, 64, 87);
+(19, 1, 67.4318, 88),
+(55, 0, 77.5, 4);
 
 -- --------------------------------------------------------
 
@@ -313,37 +245,18 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   `auction` tinyint(1) NOT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `vehicle_id` int(11) DEFAULT NULL,
-  `purchase_id` int(11) NOT NULL,
+  `purchase_id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`purchase_id`),
   KEY `FK_VEHICLE_ID` (`vehicle_id`),
   KEY `FK_EMP_ID` (`employee_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `purchase`
 --
 
 INSERT INTO `purchase` (`date`, `location`, `auction`, `employee_id`, `vehicle_id`, `purchase_id`) VALUES
-('2003-05-14', 'Yakima', 1, 4, 68, 0),
-('2017-11-01', 'Punta Gorda', 0, 58, 62, 1),
-('2003-11-01', 'Bakersfield', 1, 66, 55, 2),
-('2016-01-14', 'Washington', 1, 19, 72, 3),
-('2005-08-09', 'Fitchburg', 1, 7, 15, 4),
-('1999-07-13', 'Ogden', 0, 48, 95, 5),
-('2006-09-16', 'Fort Lauderdale', 0, 8, 23, 6),
-('2014-05-09', 'Green Bay', 1, 90, 1, 7),
-('2003-08-25', 'Virginia Beach', 1, 0, 76, 8),
-('2012-02-02', 'Arvada', 1, 41, 38, 9),
-('2000-09-09', 'Virginia Beach', 0, 46, 21, 10),
-('2005-05-26', 'Colorado Springs', 1, 2, 91, 11),
-('2001-10-19', 'McHenry', 0, 90, 12, 12),
-('2014-12-26', 'San Antonio', 1, 31, 36, 13),
-('2016-04-19', 'Plano', 0, 6, 38, 14),
-('2000-04-14', 'El Monte', 0, 13, 30, 15),
-('2010-09-21', 'Alexandria', 0, 94, 22, 16),
-('2002-11-27', 'Pittsburgh', 0, 64, 80, 17),
-('2009-08-07', 'Johnson City', 0, 49, 36, 18),
-('2014-09-27', 'Spokane', 0, 39, 90, 19);
+('1212-12-12', 'asdf', 1, 0, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -440,9 +353,9 @@ INSERT INTO `sales_comission` (`employee_id`, `comission_amount`, `commission_id
 
 DROP TABLE IF EXISTS `vehicle`;
 CREATE TABLE IF NOT EXISTS `vehicle` (
-  `vehicle_id` int(11) NOT NULL,
+  `vehicle_id` int(11) NOT NULL AUTO_INCREMENT,
   `miles` int(11) NOT NULL,
-  `vehicle_condition` char(10) NOT NULL,
+  `vehicle_condition` char(50) NOT NULL,
   `book_price` int(11) NOT NULL,
   `sale_price` int(11) NOT NULL,
   `style` char(10) NOT NULL,
@@ -452,23 +365,16 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `model` char(20) NOT NULL,
   `year` year(4) NOT NULL,
   PRIMARY KEY (`vehicle_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle`
 --
 
 INSERT INTO `vehicle` (`vehicle_id`, `miles`, `vehicle_condition`, `book_price`, `sale_price`, `style`, `exterior_color`, `interior_color`, `make`, `model`, `year`) VALUES
-(0, 123983, 973, 134009, 874754, 'Crossover', 'Red', 'Red', 'Lexus', 'Beetle', 1950),
-(1, 265360, 423, 393927, 895923, 'Sedan', 'Blue', 'Yellow', 'Chrysler', 'Beetle', 1954),
-(2, 975170, 882, 488217, 284276, 'Diesel', 'Red', 'Red', 'McLaren', 'Civic', 2004),
-(3, 154399, 28, 806649, 95837, 'Sedan', 'Red', 'Yellow', 'Mazda', 'Sonic', 1954),
-(4, 866015, 19, 322642, 280692, 'Sports Car', 'Orange', 'Yellow', 'Subaru', 'Beetle', 1988),
-(5, 287049, 226, 293234, 355754, 'Truck', 'Yellow', 'Green', 'Maybach', 'Rio', 1961),
-(6, 883726, 309, 163380, 655493, 'Sports Car', 'Orange', 'Blue', 'Chevrolet', 'Lancer', 1953),
-(7, 485558, 358, 60769, 508144, 'Sedan', 'Orange', 'Purple', 'Maserati', 'Jetta', 1961),
-(8, 508030, 991, 359384, 66691, 'Van', 'Green', 'Indigo', 'Lada', 'Fit', 2002),
-(9, 247851, 962, 277133, 232099, 'Sports Car', 'Red', 'Red', 'Martini', 'Focus', 1969);
+(1, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
+(2, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
+(3, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001);
 
 -- --------------------------------------------------------
 
@@ -517,40 +423,22 @@ INSERT INTO `vehicle_owner` (`customer_id`, `vehicle_id`) VALUES
 
 DROP TABLE IF EXISTS `vehicle_problem`;
 CREATE TABLE IF NOT EXISTS `vehicle_problem` (
-  `problem_id` int(11) NOT NULL,
+  `problem_id` int(11) NOT NULL AUTO_INCREMENT,
   `description` char(50) NOT NULL,
   `purchase_id` int(11) NOT NULL,
   `estimated_cost` int(11) NOT NULL,
   `actual_cost` int(11) NOT NULL,
   PRIMARY KEY (`problem_id`) USING BTREE,
   KEY `FK_PURCHASE_ID` (`purchase_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle_problem`
 --
 
 INSERT INTO `vehicle_problem` (`problem_id`, `description`, `purchase_id`, `estimated_cost`, `actual_cost`) VALUES
-(0, 'BLAH BLAH BLAH BLAH BLAH', 14, 684553, 760215),
-(1, 'BLAH BLAH BLAH BLAH BLAH', 7, 79073, 144100),
-(2, 'BLAH BLAH BLAH BLAH BLAH', 18, 150907, 317547),
-(3, 'BLAH BLAH BLAH BLAH BLAH', 43, 381184, 862580),
-(4, 'BLAH BLAH BLAH BLAH BLAH', 40, 891145, 178156),
-(5, 'BLAH BLAH BLAH BLAH BLAH', 77, 509761, 809341),
-(6, 'BLAH BLAH BLAH BLAH BLAH', 75, 18802, 101188),
-(7, 'BLAH BLAH BLAH BLAH BLAH', 59, 795839, 983292),
-(8, 'BLAH BLAH BLAH BLAH BLAH', 2, 580704, 744534),
-(9, 'BLAH BLAH BLAH BLAH BLAH', 64, 757235, 72237),
-(10, 'BLAH BLAH BLAH BLAH BLAH', 61, 677537, 599989),
-(11, 'BLAH BLAH BLAH BLAH BLAH', 1, 932130, 16169),
-(12, 'BLAH BLAH BLAH BLAH BLAH', 7, 591065, 502432),
-(13, 'BLAH BLAH BLAH BLAH BLAH', 47, 356475, 420456),
-(14, 'BLAH BLAH BLAH BLAH BLAH', 33, 523498, 468569),
-(15, 'BLAH BLAH BLAH BLAH BLAH', 1, 573861, 927964),
-(16, 'BLAH BLAH BLAH BLAH BLAH', 99, 567658, 913671),
-(17, 'BLAH BLAH BLAH BLAH BLAH', 11, 911309, 284451),
-(18, 'BLAH BLAH BLAH BLAH BLAH', 64, 687131, 782893),
-(19, 'BLAH BLAH BLAH BLAH BLAH', 23, 694610, 481720);
+(1, 'COMPLETE TRASH', 2, 0, 1000000),
+(2, 'COMPLETE TRASH', 1, 0, 1000000);
 
 -- --------------------------------------------------------
 
@@ -653,64 +541,6 @@ INSERT INTO `warranty_item` (`item_id`, `warranty_id`, `item_covered`, `start_da
 --
 ALTER TABLE `employee`
   ADD CONSTRAINT `job_id_constraint` FOREIGN KEY (`job_id`) REFERENCES `employee_job` (`job_id`);
-
---
--- Constraints for table `employment_history`
---
-ALTER TABLE `employment_history`
-  ADD CONSTRAINT `employment_hist_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `payment`
---
-ALTER TABLE `payment`
-  ADD CONSTRAINT `payment_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `payment_info`
---
-ALTER TABLE `payment_info`
-  ADD CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `purchase`
---
-ALTER TABLE `purchase`
-  ADD CONSTRAINT `purchase_emp_id` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `purchase_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`vehicle_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `sale`
---
-ALTER TABLE `sale`
-  ADD CONSTRAINT `sale_ customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `sale_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `sales_comission`
---
-ALTER TABLE `sales_comission`
-  ADD CONSTRAINT `commission_emp_id` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `vehicle_problem`
---
-ALTER TABLE `vehicle_problem`
-  ADD CONSTRAINT `problem_purchase_id` FOREIGN KEY (`purchase_id`) REFERENCES `purchase` (`purchase_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `warranty`
---
-ALTER TABLE `warranty`
-  ADD CONSTRAINT `warranty_customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `warranty_employee_id` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `warranty_vehicle_id` FOREIGN KEY (`vehicle_id`) REFERENCES `vehicle` (`vehicle_id`) ON DELETE SET NULL ON UPDATE CASCADE;
-
---
--- Constraints for table `warranty_item`
---
-ALTER TABLE `warranty_item`
-  ADD CONSTRAINT `item_warranty_id` FOREIGN KEY (`warranty_id`) REFERENCES `warranty` (`warranty_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
