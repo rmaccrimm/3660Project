@@ -62,9 +62,9 @@ include 'report_functions.php';
     <?php
     $unsold_query =
         'SELECT make, model, `year`, style, vehicle_condition, exterior_color, interior_color, miles, book_price
-         FROM vehicle WHERE NOT EXISTS (SELECT * 
-                                       FROM vehicle, vehicle_owner
-                                       WHERE vehicle.vehicle_id = vehicle_owner.vehicle_id)';
+         FROM vehicle 
+         WHERE vehicle_id NOT IN (SELECT vehicle_id FROM vehicle_owner)';
+
     make_table(
         db_query($unsold_query),
         ['Make', 'Model', 'Year', 'Style', 'Condition', 'Exterior Color', 'Interior Color', 'Miles', 'Book Price'],

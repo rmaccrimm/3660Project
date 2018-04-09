@@ -35,6 +35,10 @@ function db_query($query) {
         return false;
     }
 
+    if($result->num_rows == 0) {
+        return false;
+    }
+
     return $result;
 }
 

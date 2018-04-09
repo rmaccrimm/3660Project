@@ -35,6 +35,12 @@ $purchase_query =
      WHERE first_name=\''.$first.'\' AND last_name=\''.$last.'\'
            AND purchase.employee_id=employee.employee_id AND purchase.vehicle_id=vehicle.vehicle_id';
 
+$warranty_query =
+    'SELECT vehicle_id, sale_date, total_cost, monthly_cost
+     FROM warranty, employee
+     WHERE first_name=\''.$first.'\' AND last_name=\''.$last.'\'
+           AND warranty.employee_id=employee.employee_id';
+
 $contact_result = db_query($contact_query);
 $title = $contact_result->fetch_assoc()['job_title'];
 
@@ -69,6 +75,13 @@ else if ($title == 'buyer') {
         ['Make', 'Model', 'Year', 'Book Price', 'Sale Price', 'Date', 'Auction', 'Location'],
         ['make', 'model', 'year', 'book_price', 'sale_price', 'date', 'auction', 'location'],
         'Purchases'
+    );
+
+    make_table(
+        db_query($warranty_query),
+        ['Vehicle ID', 'Sale Date', 'Total Cost', 'Monthly Cost'],
+        ['vehicle_id', 'sale_date', 'total_cost', 'monthly_cost'],
+        'Warranties Sold'
     );
 }
 

@@ -69,6 +69,12 @@
                 <td><a href="reports/unsold_vehicle_report.php" title="Inventory">Inventory</a></td>
                 <td>A list of all unsold vehicles currently at Westside Auto</td>
             </tr>
+            <tr>
+                <td><a href="reports/vehicle_report.php" title="Vehicle Info">Vehicle Information</a></td>
+                <td>Information on individual vehicles and any problems they have. Find the id number
+                    for a vehicle in one of the reports above.
+                </td>
+            </tr>
         </table>
 
         <div class="ui-widget" id="form_ajax_result">

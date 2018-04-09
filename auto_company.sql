@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2018 at 02:58 AM
+-- Generation Time: Apr 09, 2018 at 04:13 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -238,14 +238,15 @@ CREATE TABLE IF NOT EXISTS `purchase` (
   PRIMARY KEY (`purchase_id`),
   KEY `FK_VEHICLE_ID` (`vehicle_id`),
   KEY `FK_EMP_ID` (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `purchase`
 --
 
 INSERT INTO `purchase` (`date`, `location`, `auction`, `employee_id`, `vehicle_id`, `purchase_id`) VALUES
-('1212-12-12', 'asdf', 1, 0, 3, 1);
+('1212-12-12', 'asdf', 1, 0, 3, 1),
+('1212-12-12', 'Here', 1, 2, 4, 2);
 
 -- --------------------------------------------------------
 
@@ -313,7 +314,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `model` char(20) NOT NULL,
   `year` year(4) NOT NULL,
   PRIMARY KEY (`vehicle_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle`
@@ -322,7 +323,8 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
 INSERT INTO `vehicle` (`vehicle_id`, `miles`, `vehicle_condition`, `book_price`, `sale_price`, `style`, `exterior_color`, `interior_color`, `make`, `model`, `year`) VALUES
 (1, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
 (2, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
-(3, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001);
+(3, 123500, 'Terrible', 123123, 1234123, 'sedan', 'black', 'black', 'Honda', 'Civic', 2001),
+(4, 11000500, 'Excellent', 200, 3245, 'sedan', 'black', 'orange', 'Honda', 'Civic', 2018);
 
 -- --------------------------------------------------------
 
@@ -336,32 +338,6 @@ CREATE TABLE IF NOT EXISTS `vehicle_owner` (
   `vehicle_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`,`vehicle_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `vehicle_owner`
---
-
-INSERT INTO `vehicle_owner` (`customer_id`, `vehicle_id`) VALUES
-(3, 99),
-(5, 68),
-(9, 1),
-(9, 30),
-(9, 46),
-(9, 79),
-(15, 71),
-(17, 52),
-(20, 56),
-(34, 47),
-(41, 0),
-(59, 14),
-(59, 87),
-(60, 22),
-(61, 1),
-(65, 80),
-(65, 90),
-(80, 7),
-(82, 3),
-(98, 39);
 
 -- --------------------------------------------------------
 
@@ -378,7 +354,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_problem` (
   `actual_cost` int(11) NOT NULL,
   PRIMARY KEY (`problem_id`) USING BTREE,
   KEY `FK_PURCHASE_ID` (`purchase_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `vehicle_problem`
@@ -386,7 +362,8 @@ CREATE TABLE IF NOT EXISTS `vehicle_problem` (
 
 INSERT INTO `vehicle_problem` (`problem_id`, `description`, `purchase_id`, `estimated_cost`, `actual_cost`) VALUES
 (1, 'COMPLETE TRASH', 2, 0, 1000000),
-(2, 'COMPLETE TRASH', 1, 0, 1000000);
+(2, 'COMPLETE TRASH', 1, 0, 1000000),
+(3, 'No Engine', 2, 100, 20);
 
 -- --------------------------------------------------------
 
