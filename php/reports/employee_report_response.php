@@ -18,7 +18,7 @@ $first = strtoupper($names[0]);
 $last = strtoupper($names[1]);
 
 $contact_query =
-    'SELECT phone, job_title
+    'SELECT address, city, state, zip_code, phone, job_title, commission
      FROM employee, employee_job
      WHERE first_name=\''.$first.'\' AND last_name=\''.$last.'\'
            AND employee.job_id=employee_job.job_id';
@@ -36,19 +36,19 @@ $purchase_query =
            AND purchase.employee_id=employee.employee_id AND purchase.vehicle_id=vehicle.vehicle_id';
 
 $contact_result = db_query($contact_query);
-
-make_table(
-    $contact_result,
-    ['Phone', 'Title'],
-    ['phone', 'job_title'],
-    'Contact Information'
-);
-
-// All rows have been fetched so query again
-$contact_result = db_query($contact_query);
 $title = $contact_result->fetch_assoc()['job_title'];
 
+// Result has already been fetched so query again
+$contact_result = db_query($contact_query);
+
 if ($title == 'salesperson') {
+    make_table(
+        $contact_result,
+        ['Address', 'City', 'State', 'Zip Code', 'Phone', 'Title', 'Commission'],
+        ['address', 'city', 'state', 'zip_code', 'phone', 'job_title', 'commission'],
+        'Contact Information'
+    );
+
     make_table(
         db_query($sales_query),
         ['Make', 'Model', 'Year', 'First Name', 'Last Name', 'Total Due', 'Down Payment', 'Finance Amount', 'Date'],
@@ -57,6 +57,13 @@ if ($title == 'salesperson') {
     );
 }
 else if ($title == 'buyer') {
+    make_table(
+        $contact_result,
+        ['Address', 'City', 'State', 'Zip Code', 'Phone', 'Title'],
+        ['address', 'city', 'state', 'zip_code', 'phone', 'job_title'],
+        'Contact Information'
+    );
+
     make_table(
         db_query($purchase_query),
         ['Make', 'Model', 'Year', 'Book Price', 'Sale Price', 'Date', 'Auction', 'Location'],
