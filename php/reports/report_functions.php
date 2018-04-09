@@ -9,7 +9,7 @@
 function make_table($query_result, $headers, $columns, $caption)
 {
     echo '<table id=form_table><caption>'.$caption.'</caption>';
-    if (!$query_result) {
+    if ($query_result->num_rows == 0) {
         echo "<tr><td>No results found</td></tr>";
     }
     else {

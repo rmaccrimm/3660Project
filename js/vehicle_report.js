@@ -15,7 +15,7 @@ $(function() {
             'vehicle_report_response.php',
             $(this).serialize(),
             function (response) {
-                $('#vehicle_report_response').html(response);
+                $('#vehicle_report_result').html(response);
             });
     });
 });
