@@ -10,9 +10,12 @@
 <head>
     <title>Reports</title>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/sale_form.js"></script>
     <link rel="stylesheet" href="../style/basic_style.css">
     <link rel="stylesheet" href="../style/forms_style.css">
     <link rel="stylesheet" href="../style/entry_form_style.css">
+    <link rel="stylesheet" href="../style/sale_form_style.css">
 </head>
 <body>
 
@@ -47,11 +50,38 @@
 
     <!-- Content -->
     <div id="page_content">
-        <p></p>
-        <form class="entry_form" id="purchase_car_form" action="purchase_response.php" method="POST">
+        <p>Note: Customers who pay full in cash have 0% finance and Total Due = Down Payment</p>
+        <form class="entry_form" id="sell_car_form" action="sale_response.php" method="POST">
             <!-- Going for a two column form here -->
             <div class="form_row">
+                <div class="form_col">
+                    <label for="employee_id">Employee Id</label>
+                    <select name="employee_id" id="employee_id">
+                        <!-- jQuery employee 1, 2, 3, ... -->
+                    </select>
 
+                    <label for="customer_id">Customer Id</label>
+                    <select name="customer_id" id="customer_id">
+                        <!-- jQuery customer 1, 2, 3, ... -->
+                    </select>
+
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="form_col">
+                    <label for="total_due">$ Total Due</label>
+                    <input type="number" min="0" value="0" name="total_due" id="total_due" required>
+
+                    <label for="down_payment">$ Down Payment</label>
+                    <input type="number" min="0" value="0" name="down_payment" id="down_payment" required>
+
+                    <label for="finance_amount">% Finance Amount</label>
+                    <input type="number" min="0" value="0" name="finance_amount" id="finance_amount" required>
+                </div>
+                <div id="all_employment_history">
+                    <button type="button" id="new_employment_history">+ Employment history</button>
+                    <!-- jquery employment history -->
+                </div>
             </div>
             <!-- submit button not in either column -->
             <input id="form_submit" type="submit" value="Submit">
