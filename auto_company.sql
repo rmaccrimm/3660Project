@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 09, 2018 at 04:03 PM
+-- Generation Time: Apr 09, 2018 at 04:18 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `gender` char(20) NOT NULL,
   `tax_id` int(11) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `customer`
@@ -50,7 +50,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
 
 INSERT INTO `customer` (`customer_id`, `last_name`, `first_name`, `address`, `city`, `state`, `zip_code`, `phone`, `date_of_birth`, `gender`, `tax_id`) VALUES
 (1, 'TACO', 'FISH', 'sf', 'l;kj;', 'AL', 'TKJDFE', '3023123123123', '1980-02-12', 'male', 123123),
-(2, 'Toly', 'Ethan', 'Ethans House', 'Lethbridge', 'AL', '90210', '403-911-9111', '2018-04-03', 'female', 222233);
+(2, 'Toly', 'Ethan', 'Ethans House', 'Lethbridge', 'AL', '90210', '403-911-9111', '2018-04-03', 'female', 222233),
+(3, 'Doe', 'John', 'P Sherman 42 Wallaby Way', 'Sydney', 'AL', '909090', '123123123', '2018-04-18', 'prefer_no', 123443);
 
 -- --------------------------------------------------------
 

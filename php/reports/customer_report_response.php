@@ -41,6 +41,12 @@ $warranty_item_query =
      WHERE first_name=\''.$first.'\' AND last_name=\''.$last.'\'
            AND warranty.customer_id=customer.customer_id AND warranty_item.warranty_id=warranty.warranty_id';
 
+$emp_history_query =
+    'SELECT employer, title, supervisor, EH.phone, EH.address, start
+     FROM employment_history as EH, customer     
+     WHERE first_name=\''.$first.'\' AND last_name=\''.$last.'\' 
+           AND EH.customer_id=customer.customer_id';
+
 make_table(
     db_query($contact_query),
     ['Address', 'City', 'State', 'Zip Code', 'Phone'],
@@ -74,6 +80,13 @@ make_table(
     ['Item', 'Start Date', 'Length', 'Cost', 'Deductible'],
     ['item_covered', 'start_date', 'length', 'cost', 'deductible'],
     'Warranty Items'
+);
+
+make_table(
+    db_query($emp_history_query),
+    ['Employer', 'Title', 'Supervisor', 'Phone', 'Address', 'Start'],
+    ['employer', 'title', 'supervisor', 'phone', 'address', 'start'],
+    'Employment History'
 );
 
 ?>
