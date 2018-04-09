@@ -77,7 +77,7 @@ include 'report_functions.php'
     make_table(
             db_query($sold_query),
             ['Make', 'Model', 'Year', 'Style', 'Condition', 'Book Price', 'Sale Price', 'Sold by', 'Sold to', 'Date'],
-            ['make', 'model', 'year', 'style', 'condition', 'book_price', 'sale_price', 'last_name', 'last_name', 'date'],
+            ['make', 'model', 'year', 'style', 'vehicle_condition', 'book_price', 'sale_price', 'last_name', 'last_name', 'date'],
             ''
     );
     ?>
